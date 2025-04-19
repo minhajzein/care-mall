@@ -1,6 +1,18 @@
-import React from 'react'
+'use client'
+import Modal from 'antd/es/modal/Modal'
+import { useState } from 'react'
+import Login from '../auth/Login'
+import SignUp from '../auth/SignUp'
+import { useSelector } from 'react-redux'
 
 function Header() {
+	const user = useSelector(state => state.user.user)
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [authType, setAuthType] = useState('login')
+
+	const handleModalOpen = () => setIsModalOpen(true)
+	const handleCancel = () => setIsModalOpen(false)
+
 	return (
 		<header className='bg-primary gap-2 w-full flex flex-col text-white p-4'>
 			<div className='flex items-center justify-between'>
@@ -11,10 +23,21 @@ function Header() {
 					<option value='china'>China</option>
 				</select>
 				<div className='flex items-center gap-2'>
-					<button className='flex items-center gap-1'>
-						<img src='/svgs/sign-in.svg' alt='' />
-						<h1 className='text-[14px]'>sign in</h1>
-					</button>
+					{user ? (
+						<div className='flex cursor-pointer items-center gap-1'>
+							<img className='size-4 rounded-full' src={user?.avatar} alt='' />
+							<h1 className='text-[14px]'>{user?.username}</h1>
+						</div>
+					) : (
+						<button
+							onClick={handleModalOpen}
+							className='flex cursor-pointer items-center gap-1'
+						>
+							<img src='/svgs/sign-in.svg' alt='' />
+							<h1 className='text-[14px]'>sign in</h1>
+						</button>
+					)}
+
 					<button className='flex items-center gap-1'>
 						<img src='/svgs/cart.svg' alt='' />
 						<h1 className='text-[14px]'>cart</h1>
@@ -45,6 +68,13 @@ function Header() {
 					Become a Promoter
 				</button>
 			</div>
+			<Modal open={isModalOpen} onCancel={handleCancel} footer={[]}>
+				{authType === 'login' ? (
+					<Login setAuthType={setAuthType} setIsModalOpen={setIsModalOpen} />
+				) : (
+					<SignUp setAuthType={setAuthType} setIsModalOpen={setIsModalOpen} />
+				)}
+			</Modal>
 		</header>
 	)
 }
