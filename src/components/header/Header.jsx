@@ -65,7 +65,7 @@ function Header() {
 			<div className='flex justify-between items-center'>
 				<img src='/svgs/menu.svg' alt='' />
 				<button className='border border-white px-3 py-1 rounded text-sm'>
-					Become a Promoter
+					Be the Face of the Brand
 				</button>
 			</div>
 			<Modal open={isModalOpen} onCancel={handleCancel} footer={[]}>
