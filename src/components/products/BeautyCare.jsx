@@ -1,5 +1,5 @@
-import CategoryHeader from './CategoryHeader'
-import ProductCard from './ProductCard'
+import CategoryHeader from "./CategoryHeader"
+import ProductCard from "./ProductCard"
 
 const products = [
 	{
