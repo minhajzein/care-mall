@@ -11,11 +11,14 @@ const categories = [
 
 function Categories() {
 	return (
-		<div className='p-4 grid grid-cols-4 border-y-8 border-primary font-nunito gap-3'>
+		<div className='grid grid-cols-4 lg:grid-cols-8 font-nunito gap-3 lg:gap-8'>
 			{categories.map((category, i) => (
-				<div key={i} className='flex flex-col gap-1 justify-center'>
+				<div
+					key={i}
+					className='flex flex-col gap-1 justify-center cursor-pointer'
+				>
 					<img src={category.icon} alt='' />
-					<h1 className='text-[12px] whitespace-nowrap text-ellipsis overflow-hidden text-center'>
+					<h1 className='text-[12px] lg:text-sm whitespace-nowrap text-ellipsis overflow-hidden text-center'>
 						{category.title}
 					</h1>
 				</div>

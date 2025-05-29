@@ -1,8 +1,8 @@
 function TopOffers() {
 	return (
-		<div className='p-4 flex flex-col gap-1'>
+		<div className='flex flex-col gap-1'>
 			<h1 className='font-bold text-primary leading-3 text-sm'>Top Offers</h1>
-			<div className='grid grid-cols-2 md:grid-cols-4 gap-2'>
+			<div className='grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-6'>
 				<div className='flex flex-col bg-gray-400 rounded-lg overflow-hidden'>
 					<div className='flex justify-between items-start p-2 bg-primary rounded-lg'>
 						<h1 className='text-lg uppercase leading-5 text-white font-bold'>

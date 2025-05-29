@@ -14,60 +14,109 @@ function Header() {
 	const handleCancel = () => setIsModalOpen(false)
 
 	return (
-		<header className='bg-primary gap-2 w-full flex flex-col text-white p-4'>
-			<div className='flex items-center justify-between'>
-				<img src='/svgs/CAREMALL.svg' alt='' />
-				<select defaultValue={'india'} className='bg-primary'>
-					<option value='india'>India</option>
-					<option value='saudi-arabia'>Saudi</option>
-					<option value='china'>China</option>
-				</select>
-				<div className='flex items-center gap-2'>
-					{user ? (
-						<div className='flex cursor-pointer items-center gap-1'>
-							<img className='size-4 rounded-full' src={user?.avatar} alt='' />
-							<h1 className='text-[14px]'>{user?.username}</h1>
-						</div>
-					) : (
-						<button
-							onClick={handleModalOpen}
-							className='flex cursor-pointer items-center gap-1'
-						>
-							<img src='/svgs/sign-in.svg' alt='' />
-							<h1 className='text-[14px]'>sign in</h1>
-						</button>
-					)}
-
-					<button className='flex items-center gap-1'>
-						<img src='/svgs/cart.svg' alt='' />
-						<h1 className='text-[14px]'>cart</h1>
-					</button>
+		<header className='w-full flex relative flex-col text-white'>
+			<div className='bg-primary-black w-full h-[48px] flex items-center justify-end'>
+				<div className='flex items-center justify-between w-[50%]'>
+					<h3 className='text-center text-sm -translate-x-1/2'>
+						Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{' '}
+						<span className='font-bold underline capitalize cursor-pointer'>
+							ShopNow
+						</span>
+					</h3>
+					<select name='language' className='-translate-x-1/2' id='language'>
+						<option value='english' className='capitalize bg-primary-black'>
+							english
+						</option>
+					</select>
 				</div>
 			</div>
-			<div className='w-full relative'>
-				<img
-					className='absolute top-1/2 left-2 -translate-y-1/2'
-					src='/svgs/search-icon.svg'
-					alt=''
-				/>
-				<input
-					className='w-full py-2 px-8 text-xs rounded text-black bg-white outline-none'
-					type='search'
-					placeholder='Search for products, brands and more'
-					name='search'
-				/>
-				<img
-					className='absolute border-l border-gray-500 px-3 p-2 top-1/2 right-0 -translate-y-1/2'
-					src='/svgs/sound.svg'
-					alt=''
-				/>
+			<div className='flex px-8 py-2 justify-between sticky top-0 bg-white items-center'>
+				<div className='flex items-center gap-1'>
+					<img
+						src='/svgs/caremall-logo.svg'
+						className='rounded size-[31px]'
+						alt=''
+					/>
+					<h2 className='text-black font-bold'>CareMall</h2>
+				</div>
+				<div className='flex items-center gap-3'>
+					<button className='flex justify-center items-center gap-3 bg-primary rounded-md px-4 h-[40px]'>
+						<img src='/svgs/menu.svg' alt='' />
+						<p>Categories</p>
+					</button>
+					<div className='relative rounded-md border border-gray-500 flex items-center justify-between px-4 py-2 text-xs w-[600px] h-[40px]'>
+						<input
+							type='search'
+							className='outline-none w-full  bg-white text-black'
+							placeholder='Search for products, categories and more'
+						/>
+						<img
+							src='/svgs/search.png'
+							className='size-3 cursor-pointer'
+							alt=''
+						/>
+					</div>
+				</div>
+				<div className='px-4 flex items-center gap-6 text-black'>
+					<button className='flex items-center gap-2 cursor-pointer'>
+						<img src='/svgs/orders.svg' alt='' />
+						<p>Orders</p>
+					</button>
+					<button className='flex items-center gap-2 cursor-pointer'>
+						<img src='/svgs/wishlist.svg' alt='' />
+						<p>Favorites</p>
+					</button>
+					<button className='flex items-center gap-2 cursor-pointer'>
+						<img src='/svgs/cart.svg' alt='' />
+						<p>Cart</p>
+					</button>
+				</div>
+				<button
+					onClick={handleModalOpen}
+					className='h-[40px] text-black px-4 border cursor-pointer border-gray-500 rounded-md bg-white'
+				>
+					Sign In
+				</button>
 			</div>
-			<div className='flex justify-between items-center'>
-				<img src='/svgs/menu.svg' alt='' />
-				<button className='border border-white px-3 py-1 rounded text-sm'>
+			<div className='bg-primary w-full h-[48px] flex items-center justify-between px-8'>
+				<div className='flex items-center gap-2'>
+					<img src='/svgs/location.svg' alt='' />
+					<select name='location' id='location'>
+						<option value='india'>india</option>
+					</select>
+				</div>
+				<ul className='flex items-center gap-6'>
+					<li className='cursor-pointer hover:underline duration-300'>
+						Best Sellers
+					</li>
+					<li className='cursor-pointer hover:underline duration-300'>
+						New Releases
+					</li>
+					<li className='cursor-pointer hover:underline duration-300'>Books</li>
+					<li className='cursor-pointer hover:underline duration-300'>
+						Best Sellers
+					</li>
+					<li className='cursor-pointer hover:underline duration-300'>
+						Computers
+					</li>
+					<li className='cursor-pointer hover:underline duration-300'>
+						Fashion
+					</li>
+					<li className='cursor-pointer hover:underline duration-300'>
+						Health
+					</li>
+					<li className='cursor-pointer hover:underline duration-300'>
+						Pharmacy
+					</li>
+					<li className='cursor-pointer hover:underline duration-300'>
+						Toys & Games
+					</li>
+				</ul>
+				<button className='border border-white cursor-pointer px-3 py-1 rounded text-sm'>
 					Be the Face of the Brand
 				</button>
 			</div>
+
 			<Modal open={isModalOpen} onCancel={handleCancel} footer={[]}>
 				{authType === 'login' ? (
 					<Login setAuthType={setAuthType} setIsModalOpen={setIsModalOpen} />

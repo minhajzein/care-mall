@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-primary: #ff431a;
+	--color-primary: #fe0000;
 	--color-primary-black: #050009;
 	--font-nunito: Nunito, sans-serif;
 }
