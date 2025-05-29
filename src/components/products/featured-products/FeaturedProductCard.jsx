@@ -8,8 +8,12 @@ function FeaturedProductCard({ product }) {
 				src={product.imageSource}
 				alt=''
 			/>
-			<div className='flex flex-col items-center justify-center'>
-				<title>{product.title}</title>
+			<div className='flex flex-col items-center text-black justify-between'>
+				<h1 className='line-clamp-2 text-center font-bold'>{product.title}</h1>
+				<p>
+					<del>${product.price}</del> {product.discountPrice}
+				</p>
+				<h3 className='text-gray-500'>{product.brand}</h3>
 			</div>
 		</div>
 	)

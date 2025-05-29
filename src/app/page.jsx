@@ -17,7 +17,7 @@ import TopOffers from '@/components/top-offers/TopOffers'
 
 export default function Home() {
 	return (
-		<div className='flex flex-col justify-center min-h-dv px-[120px] pt-[30px] gap-[30px] bg-gray-100 text-gray-800'>
+		<div className='flex flex-col justify-center min-h-dv lg:px-[120px] pt-[30px] gap-[30px] bg-gray-100 text-gray-800'>
 			<Banner />
 			<Categories />
 			<MiniBanners />
