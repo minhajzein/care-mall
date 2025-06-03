@@ -11,7 +11,7 @@ function ProductCard({ product }) {
 					<img className='size-3' src='/svgs/favourite.svg' alt='' />
 				</div>
 			</div>
-			<h1 className='text-sm line-clamp-2'>{product.title}</h1>
+			<h1 className='text-sm truncate'>{product.title}</h1>
 			<h1 className='font-bold text-lg'>{product.discountPrice}</h1>
 			<div className='flex gap-2 items-center'>
 				<del className='text-gray-500 text-xs'>{product.price}</del>
