@@ -26,7 +26,7 @@ export default function Home() {
 				<Categories />
 			</div>
 			<InfinityCarousel />
-			<div className='w-full md:p-8 p-2 gap-4 md:gap-8 flex flex-col'>
+			<div className='w-full md:p-8 p-2 gap-6 md:gap-8 flex flex-col'>
 				<TopOffers />
 				<MiniBanners />
 				<FeaturedProducts />
