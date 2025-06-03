@@ -70,9 +70,9 @@ function Header() {
 					Sign In
 				</button>
 			</div>
-			<div className='bg-primary w-full hidden h-[48px] md:flex items-center justify-between px-8'>
+			<div className='bg-primary w-full  md:h-[48px] flex items-center justify-between px-2 py-1 md:px-8'>
 				<img src='/svgs/menu.svg' alt='' />
-				<ul className='flex items-center gap-6'>
+				<ul className='md:flex items-center hidden gap-6'>
 					<li className='cursor-pointer hover:underline flex items-center gap-1 duration-300'>
 						<h1>Electronics</h1>
 						<img
