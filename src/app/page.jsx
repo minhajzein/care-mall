@@ -40,8 +40,6 @@ export default function Home() {
 				<MobileAccesories />
 				<DownloadOptions />
 			</div>
-
-			<SocialMedia />
 		</div>
 	)
 }

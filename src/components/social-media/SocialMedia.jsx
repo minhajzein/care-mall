@@ -2,7 +2,7 @@ import React from 'react'
 
 function SocialMedia() {
 	return (
-		<div className='p-8 flex items-center flex-col gap-2'>
+		<div className='flex items-center flex-col gap-2'>
 			<p>Get in touch with us</p>
 			<div className='grid grid-cols-4 gap-2'>
 				<img
@@ -11,7 +11,7 @@ function SocialMedia() {
 					alt=''
 				/>
 				<img
-					className='rounded-lg shadow-md shadow-black/50 size-8'
+					className='rounded-lg shadow-md bg-white shadow-black/50 size-8'
 					src='/images/youtube.webp'
 					alt=''
 				/>

@@ -1,3 +1,5 @@
+import SocialMedia from '../social-media/SocialMedia'
+
 function Footer() {
 	return (
 		<footer className='bg-primary-black p-8 text-gray-100 font-nunito gap-4 flex flex-col'>
@@ -28,6 +30,7 @@ function Footer() {
 					<li>Our Brands</li>
 					<li>Popular Categories</li>
 				</ul>
+				<SocialMedia />
 			</div>
 			<p className='text-gray-500 text-[14px]'>Copyright 2025</p>
 		</footer>
