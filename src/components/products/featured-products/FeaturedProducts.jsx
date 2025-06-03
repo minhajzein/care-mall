@@ -1,4 +1,4 @@
-import FeaturedProductCard from './FeaturedProductCard'
+import ProductCard from '../ProductCard'
 
 const products = [
 	{
@@ -49,67 +49,35 @@ const products = [
 		brand: 'GoXtreme',
 		imageSource: '/images/product-6.png',
 	},
-	{
-		id: 7,
-		title: 'Portable Bluetooth Speaker',
-		price: 45.0,
-		discountPrice: 29.99,
-		brand: 'BassBoom',
-		imageSource: '/images/product-7.png',
-	},
-	{
-		id: 8,
-		title: 'Ergonomic Office Chair',
-		price: 229.99,
-		discountPrice: 179.99,
-		brand: 'ComfortSit',
-		imageSource: '/images/product-8.png',
-	},
-	{
-		id: 9,
-		title: 'Smartphone 128GB Dual SIM',
-		price: 699.0,
-		discountPrice: 599.0,
-		brand: 'NextGen',
-		imageSource: '/images/product-9.png',
-	},
-	{
-		id: 10,
-		title: 'Electric Toothbrush Set',
-		price: 89.99,
-		discountPrice: 59.99,
-		brand: 'SmileCare',
-		imageSource: '/images/product-10.png',
-	},
-	{
-		id: 11,
-		title: 'High-Speed Blender 1500W',
-		price: 199.99,
-		discountPrice: 149.99,
-		brand: 'BlendPro',
-		imageSource: '/images/product-11.png',
-	},
-	{
-		id: 12,
-		title: 'Noise Cancelling Earbuds',
-		price: 99.99,
-		discountPrice: 74.99,
-		brand: 'SilentBeats',
-		imageSource: '/images/product-12.png',
-	},
 ]
 
 function FeaturedProducts() {
 	return (
 		<div className='flex flex-col gap-4'>
-			<div className='w-full h-1 bg-gray-500'></div>
-			<h1 className='uppercase text-2xl font-bold text-primary'>
-				Featured Products
-			</h1>
-			<div className='grid grid-cols-6'>
-				{products.map(product => (
-					<FeaturedProductCard key={product.id} product={product} />
-				))}
+			<div className='flex gap-4 items-center'>
+				<div className='h-8 w-4 bg-primary rounded'></div>
+				<h1 className='font-bold text-primary leading-3 text-sm md:text-3xl'>
+					Featured Products
+				</h1>
+			</div>
+			<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+				<div className='grid grid-flow-col md:grid-flow-row overflow-x-auto md:grid-cols-3 gap-2 md:gap-4'>
+					{products.map(product => (
+						<ProductCard key={product.id} product={product} />
+					))}
+				</div>
+				<div className='flex flex-col gap-4'>
+					<img
+						src='/images/feetured-porduct.png'
+						className='rounded-4xl'
+						alt=''
+					/>
+					<img
+						src='/images/featured-banner.png'
+						className='rounded-4xl'
+						alt=''
+					/>
+				</div>
 			</div>
 		</div>
 	)

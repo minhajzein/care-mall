@@ -1,7 +1,7 @@
 function Footer() {
 	return (
 		<footer className='bg-primary-black p-8 text-gray-100 font-nunito gap-4 flex flex-col'>
-			<div className='grid grid-cols-2 gap-2'>
+			<div className='grid grid-cols-2 md:grid-cols-4 gap-2'>
 				<ul className='text-xs'>
 					<li className='font-bold'>care mall</li>
 					<li>About US</li>

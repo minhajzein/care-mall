@@ -8,8 +8,10 @@ import BeautyCare from '@/components/products/BeautyCare'
 import Electrotinics from '@/components/products/electronics/Electrotinics'
 import Fashion from '@/components/products/Fashion'
 import FeaturedProducts from '@/components/products/featured-products/FeaturedProducts'
+import FlashSale from '@/components/products/flash-sale/FlashSale'
 import LifeStyleCorner from '@/components/products/LifeStyleCorner'
 import MobileAccesories from '@/components/products/MobileAccesories'
+import NewArrivals from '@/components/products/new-arrivals/NewArrivals'
 import SubCategories from '@/components/products/SubCategories'
 import SocialMedia from '@/components/social-media/SocialMedia'
 import TopBrands from '@/components/top-brands/TopBrands'
@@ -17,26 +19,21 @@ import TopOffers from '@/components/top-offers/TopOffers'
 
 export default function Home() {
 	return (
-		<div className='flex flex-col justify-center min-h-dv lg:px-[120px] pt-[30px] gap-[30px] bg-gray-100 text-gray-800'>
+		<div className='flex flex-col justify-center min-h-dv bg-gray-100 text-gray-800'>
 			<Banner />
-			<Categories />
-			<MiniBanners />
-			<img
-				src='/images/banner-third.jpg'
-				className='w-full object-contain'
-				alt=''
-			/>
-			<TopBrands />
-			<FeaturedProducts />
-			<img
-				className='w-full object-contain'
-				src='/images/small-banner.png'
-				alt=''
-			/>
+			<div className='md:hidden'>
+				<Categories />
+			</div>
 			<InfinityCarousel />
-			<TopOffers />
-			<Electrotinics />
-			<SubCategories />
+			<div className='w-full md:p-8 p-2 gap-4 md:gap-8 flex flex-col'>
+				<TopOffers />
+				<MiniBanners />
+				<FeaturedProducts />
+				<FlashSale />
+				<NewArrivals />
+				<Electrotinics />
+			</div>
+
 			<LifeStyleCorner />
 			<SliderSecond />
 			<Fashion />

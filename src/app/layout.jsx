@@ -29,7 +29,10 @@ export default function RootLayout({ children }) {
 			</head>
 			<body>
 				<ReduxProvider>
-					<Header />
+					<div className='w-full sticky top-0 z-50'>
+						<Header />
+					</div>
+
 					{children}
 					<ToastContainer />
 					<Footer />
