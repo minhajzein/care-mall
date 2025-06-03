@@ -20,7 +20,7 @@ function MiniBanners() {
 				<Carousel
 					autoplay={{ dotDuration: true }}
 					className=' w-full md:h-[316px] relative'
-					autoplaySpeed={5000}
+					autoplaySpeed={3000}
 					arrows
 				>
 					<div className='w-full md:h-[316px] h-[100px] flex relative'>

@@ -14,6 +14,7 @@ import MobileAccesories from '@/components/products/MobileAccesories'
 import NewArrivals from '@/components/products/new-arrivals/NewArrivals'
 import PopularProducts from '@/components/products/popular-products/PopularProducts'
 import SocialMedia from '@/components/social-media/SocialMedia'
+import Testimonials from '@/components/testimonials/Testimonials'
 import TopOffers from '@/components/top-offers/TopOffers'
 import VideoHighlights from '@/components/video-highlights/VideoHighlights'
 
@@ -38,8 +39,9 @@ export default function Home() {
 				<Fashion />
 				<BeautyCare />
 				<MobileAccesories />
-				<DownloadOptions />
+				<Testimonials />
 			</div>
+			<DownloadOptions />
 		</div>
 	)
 }

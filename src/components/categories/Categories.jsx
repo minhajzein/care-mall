@@ -11,7 +11,7 @@ const categories = [
 
 function Categories() {
 	return (
-		<div className='grid grid-cols-4 p-2 lg:grid-cols-8 font-nunito gap-3 lg:gap-8'>
+		<div className='grid grid-cols-4 py-4 px-6 lg:grid-cols-8 font-nunito gap-3 lg:gap-8'>
 			{categories.map((category, i) => (
 				<div
 					key={i}
