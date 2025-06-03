@@ -12,10 +12,9 @@ import FlashSale from '@/components/products/flash-sale/FlashSale'
 import LifeStyleCorner from '@/components/products/LifeStyleCorner'
 import MobileAccesories from '@/components/products/MobileAccesories'
 import NewArrivals from '@/components/products/new-arrivals/NewArrivals'
-import SubCategories from '@/components/products/SubCategories'
 import SocialMedia from '@/components/social-media/SocialMedia'
-import TopBrands from '@/components/top-brands/TopBrands'
 import TopOffers from '@/components/top-offers/TopOffers'
+import VideoHighlights from '@/components/video-highlights/VideoHighlights'
 
 export default function Home() {
 	return (
@@ -32,9 +31,10 @@ export default function Home() {
 				<FlashSale />
 				<NewArrivals />
 				<Electrotinics />
+				<VideoHighlights />
+				<LifeStyleCorner />
 			</div>
 
-			<LifeStyleCorner />
 			<SliderSecond />
 			<Fashion />
 			<BeautyCare />

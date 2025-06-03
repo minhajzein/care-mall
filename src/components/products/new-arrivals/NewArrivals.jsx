@@ -4,7 +4,7 @@ function NewArrivals() {
 	return (
 		<div className='flex flex-col gap-2 md:gap-4'>
 			<div className='flex gap-4 items-center'>
-				<div className='h-8 w-4 bg-primary rounded'></div>
+				<div className='size-8 bg-primary'></div>
 				<h1 className='font-bold text-primary leading-3 text-sm md:text-3xl'>
 					New Arrivals
 				</h1>
