@@ -16,42 +16,42 @@ function VideoHighlights() {
 					autoPlay
 					muted
 					controls
-					className='rounded-2xl w-[200px] h-72 object-cover'
+					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
 				></video>
 				<video
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
 					autoPlay
 					muted
 					controls
-					className='rounded-2xl w-[200px] h-72 object-cover'
+					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
 				></video>
 				<video
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
 					autoPlay
 					muted
 					controls
-					className='rounded-2xl w-[200px] h-72 object-cover'
+					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
 				></video>
 				<video
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4'
 					autoPlay
 					muted
 					controls
-					className='rounded-2xl w-[200px] h-72 object-cover'
+					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
 				></video>
 				<video
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'
 					autoPlay
 					muted
 					controls
-					className='rounded-2xl w-[200px] h-72 object-cover'
+					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
 				></video>
 				<video
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
 					autoPlay
 					muted
 					controls
-					className='rounded-2xl w-[200px] h-72 object-cover'
+					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
 				></video>
 			</div>
 		</div>
