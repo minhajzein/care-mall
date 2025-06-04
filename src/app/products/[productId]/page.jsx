@@ -3,6 +3,49 @@ import { CgMenuMotion } from 'react-icons/cg'
 import { FaLocationDot } from 'react-icons/fa6'
 import { SlHeart } from 'react-icons/sl'
 import { PiShareNetworkFill } from 'react-icons/pi'
+import ProductCard from '@/components/products/ProductCard'
+import { HiQuestionMarkCircle } from 'react-icons/hi'
+import { PiWarningCircleFill } from 'react-icons/pi'
+import { RiStarFill } from 'react-icons/ri'
+
+const products = [
+	{
+		imageSource: '/images/popular-1.png',
+		title: 'Quistal Brown Plastic 3 in 1 combo kitchen',
+		price: '₹15,999',
+		discountPrice: '₹12,999',
+	},
+	{
+		imageSource: '/images/popular-2.png',
+		title: 'Nexora Multipurpose Steel Rack Organizer',
+		price: '₹5,499',
+		discountPrice: '₹3,999',
+	},
+	{
+		imageSource: '/images/popular-3.png',
+		title: 'Velora Wooden Modular Kitchen Shelf',
+		price: '₹9,299',
+		discountPrice: '₹7,499',
+	},
+	{
+		imageSource: '/images/popular-4.png',
+		title: 'UrbanHome Foldable Kitchen Table Set',
+		price: '₹12,799',
+		discountPrice: '₹10,499',
+	},
+	{
+		imageSource: '/images/popular-5.png',
+		title: 'CookSmart Wall Mounted Spice Rack',
+		price: '₹3,199',
+		discountPrice: '₹2,299',
+	},
+	{
+		imageSource: '/images/popular-6.png',
+		title: 'ModiCasa Acrylic Kitchen Storage Jars - Set of 6',
+		price: '₹2,999',
+		discountPrice: '₹1,999',
+	},
+]
 
 function ProductDetails() {
 	return (
@@ -267,9 +310,128 @@ function ProductDetails() {
 			</div>
 			<div className='h-2 bg-gray-300 w-full'></div>
 			<div className='px-4 flex flex-col gap-4'>
-				<div></div>
+				<div className='flex flex-col gap-2'>
+					<h1 className='text-xl font-bold'>Frequently Bought Together</h1>
+					<div className='grid grid-flow-col gap-2 overflow-x-auto py-2'>
+						{products.map((product, i) => (
+							<ProductCard key={i} product={product} />
+						))}
+					</div>
+				</div>
 			</div>
-			<div className='h-2 bg-gray-300 w-full'></div>
+			<div className='h-2 bg-gray-300 w-full mt-6'></div>
+			<div className='px-4 flex flex-col gap-4'>
+				<div className='flex flex-col gap-2'>
+					<h1 className='text-xl font-bold'>Similar Products</h1>
+					<div className='grid grid-flow-col gap-2 overflow-x-auto py-2'>
+						{products.map((product, i) => (
+							<ProductCard key={i} product={product} />
+						))}
+					</div>
+				</div>
+				<hr />
+				<div className='flex flex-col mt-4 py-4 gap-6'>
+					<div className='flex justify-between'>
+						<h1 className='font-extrabold'>Questions & Answers</h1>
+						<button className='rounded-full px-4 py-1 flex items-center gap-1 border text-primary font-extrabold border-gray-500'>
+							<HiQuestionMarkCircle />
+							<p>Ask a question</p>
+						</button>
+					</div>
+					<div className='p-8 bg-gray-300 rounded-2xl flex items-center gap-2 font-bold text-primary'>
+						<PiWarningCircleFill />
+						<p>No question available for this product.</p>
+					</div>
+				</div>
+				<hr />
+				<div className='py-4'>
+					<div className='grid grid-cols-2 gap-2'>
+						<div className='flex flex-col gap-2'>
+							<h1 className='font-bold text-lg'>Rating & Reviews</h1>
+							<h1 className='text-3xl font-bold'>3.5</h1>
+							<Rate allowHalf value={3.5} disabled />
+						</div>
+						<div className='flex flex-col gap-[1px]'>
+							<div className='flex items-center text-gray-500 gap-1'>
+								5<RiStarFill />
+								<div className='w-full bg-gray-200 flex items-start overflow-hidden h-4 rounded'>
+									<div className='h-full w-[30%] bg-amber-400'></div>
+								</div>
+							</div>
+							<div className='flex items-center text-gray-500 gap-1'>
+								4<RiStarFill />
+								<div className='w-full bg-gray-200 flex items-start overflow-hidden h-4 rounded'>
+									<div className='h-full w-[60%] bg-amber-400'></div>
+								</div>
+							</div>
+							<div className='flex items-center text-gray-500 gap-1'>
+								3<RiStarFill />
+								<div className='w-full bg-gray-200 flex items-start overflow-hidden h-4 rounded'>
+									<div className='h-full w-[40%] bg-amber-400'></div>
+								</div>
+							</div>
+							<div className='flex items-center text-gray-500 gap-1'>
+								2<RiStarFill />
+								<div className='w-full bg-gray-200 flex items-start overflow-hidden h-4 rounded'>
+									<div className='h-full w-[20%] bg-amber-400'></div>
+								</div>
+							</div>
+							<div className='flex items-center text-gray-500 gap-1'>
+								1<RiStarFill />
+								<div className='w-full bg-gray-200 flex items-start overflow-hidden h-4 rounded'>
+									<div className='h-full w-[10%] bg-amber-400'></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className='flex flex-col py-4 gap-2'>
+					<h1 className='font-bold text-lg'>Review this product</h1>
+					<p className='text-gray-500'>
+						Help others make an informed decision!
+					</p>
+					<Rate allowHalf />
+				</div>
+				<div className='py-4 gap-2'>
+					<h1 className='text-2xl font-bold text-primary'>Customers say</h1>
+					<p>
+						Customers appreciate businesses that provide reliability,
+						efficiency, and exceptional service. A satisfied customer speaks
+						volumes through their trust, loyalty, and positive experiences.
+						Whether it's seamless transactions, personalized support, or simply
+						exceeding expectations, the best customer feedback is reflected in
+						their continued engagement and recommendations. "A happy customer is
+						the best business strategy of all."
+					</p>
+				</div>
+				<div className='py-4 gap-2'>
+					<h1 className='text-2xl font-bold text-primary'>
+						Review with images
+					</h1>
+					<div className='grid grid-flow-col overflow-x-auto gap-2'>
+						<div className='size-[130px] bg-amber-600'></div>
+						<div className='size-[130px] bg-red-800'></div>
+						<div className='size-[130px] bg-green-800'></div>
+						<div className='size-[130px] bg-yellow-800'></div>
+						<div className='size-[130px] bg-purple-800'></div>
+					</div>
+				</div>
+				<div className='p-4'>
+					<button className='rounded-full px-6 w-full py-3 text-primary text-2xl font-bold border border-gray-500'>
+						Write a review
+					</button>
+				</div>
+			</div>
+			<div className='h-2 bg-gray-300 w-full mt-6'></div>
+			<div className='sticky bottom-0 shadow-2xl shadow-black bg-white z-30 p-4 flex justify-between'>
+				<div>
+					<h1>Explore More!</h1>
+					<h1 className='text-xl font-bold text-primary'>View Categories </h1>
+				</div>
+				<button className='bg-primary text-white px-6 capitalize py-2 rounded-full text-lg font-bold'>
+					add to cart
+				</button>
+			</div>
 		</div>
 	)
 }
