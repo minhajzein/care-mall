@@ -1,3 +1,4 @@
+'use client'
 
 const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
