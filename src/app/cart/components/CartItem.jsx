@@ -3,6 +3,9 @@ import { FaPlus } from 'react-icons/fa'
 import { FaMinus } from 'react-icons/fa'
 
 function CartItem({ product }) {
+    const handleRemove = () => {
+        
+    }
 	return (
 		<div className='flex flex-col gap-2'>
 			<div className='grid grid-cols-2 gap-3'>

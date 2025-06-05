@@ -50,7 +50,7 @@ function Cart() {
 						</div>
 						<div className='flex w-full justify-between items-center gap-2'>
 							<div className='w-full bg-green-500 h-4 rounded-full'></div>
-							<h1 className='font-bold'>₹1080.00</h1>
+							<h1 className='font-bold'>₹{cart.totalPrice.toFixed(2)}</h1>
 						</div>
 						<div className='flex gap-2'>
 							<SiCheckmarx className='text-3xl text-green-500' />
