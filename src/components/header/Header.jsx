@@ -25,11 +25,18 @@ function Header() {
 			0
 		)
 		const totalPrice = cart.reduce(
-			(acc, item) => acc + item.price * (item.quantity || 1),
+			(acc, item) => acc + item.discountPrice * (item.quantity || 1),
 			0
 		)
-		dispatch(setCart({ items: cart, totalQuantity, totalPrice }))
+		dispatch(
+			setCart({
+				items: cart,
+				totalQuantity: totalQuantity,
+				totalPrice: totalPrice,
+			})
+		)
 	}, [])
+
 	return (
 		<header className='w-full flex relative flex-col text-white'>
 			<div className='flex md:px-8 flex-col md:flex-row px-4 pb-2 pt-4 gap-2 md:gap-0 md:py-2 justify-between sticky bg-primary top-0 md:bg-white items-center'>
