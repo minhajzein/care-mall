@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Login from '../auth/Login'
 import SignUp from '../auth/SignUp'
 import { useSelector } from 'react-redux'
+import { BiMenuAltLeft } from 'react-icons/bi'
+import Link from 'next/link'
 
 function Header() {
 	const user = useSelector(state => state.user.user)
@@ -15,10 +17,12 @@ function Header() {
 
 	return (
 		<header className='w-full flex relative flex-col text-white'>
-			<div className='flex md:px-8 flex-col md:flex-row p-2 md:py-2  gap-2 md:gap-0 justify-between sticky bg-primary top-0 md:bg-white items-center'>
+			<div className='flex md:px-8 flex-col md:flex-row px-4 pb-2 pt-4 gap-2 md:gap-0 md:py-2 justify-between sticky bg-primary top-0 md:bg-white items-center'>
 				<img className='hidden md:block' src='/svgs/logo-web.svg' alt='' />
 				<div className='flex justify-between md:w-auto w-full items-center'>
-					<img src='/svgs/CAREMALL.svg' alt='' />
+					<Link href='/'>
+						<img src='/svgs/CAREMALL.svg' alt='' />
+					</Link>
 					<div className='flex items-center gap-2 md:hidden'>
 						<div className='flex items-center gap-2'>
 							<img src='/svgs/location.svg' alt='' />
@@ -26,9 +30,12 @@ function Header() {
 								<option value='india'>india</option>
 							</select>
 						</div>
-						<button className='flex items-center gap-2 cursor-pointer'>
+						<Link
+							href='/cart'
+							className='flex items-center gap-2 cursor-pointer'
+						>
 							<img src='/svgs/cart.svg' alt='' />
-						</button>
+						</Link>
 					</div>
 				</div>
 				<div className='relative rounded-md bg-white border border-gray-500 flex items-center gap-3 justify-between px-4 py-2 text-xs w-full md:w-[600px] h-[40px]'>
@@ -58,10 +65,10 @@ function Header() {
 						<img src='/svgs/wishlist.svg' alt='' />
 						<p>Favorites</p>
 					</button>
-					<button className='flex items-center gap-2 cursor-pointer'>
+					<Link href='/cart' className='flex items-center gap-2 cursor-pointer'>
 						<img src='/svgs/cart.svg' alt='' />
 						<p>Cart</p>
-					</button>
+					</Link>
 				</div>
 				<button
 					onClick={handleModalOpen}
@@ -70,8 +77,8 @@ function Header() {
 					Sign In
 				</button>
 			</div>
-			<div className='bg-primary w-full  md:h-[48px] flex items-center justify-between px-2 py-1 md:px-8'>
-				<img src='/svgs/menu.svg' alt='' />
+			<div className='bg-primary w-full px-4  md:h-[48px] flex items-center justify-between pb-4 pt-1 md:px-8'>
+				<BiMenuAltLeft className='text-3xl' />
 				<ul className='md:flex items-center hidden gap-6'>
 					<li className='cursor-pointer hover:underline flex items-center gap-1 duration-300'>
 						<h1>Electronics</h1>

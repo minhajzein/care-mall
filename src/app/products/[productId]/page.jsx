@@ -50,7 +50,7 @@ const products = [
 function ProductDetails() {
 	return (
 		<div className='flex flex-col gap-2'>
-			<div className='flex p-4 items-center bg-primary/30 text-xl gap-2'>
+			<div className='flex p-4 items-center bg-primary/30 text-lg gap-2'>
 				<FaLocationDot className='text-2xl' />
 				<div className='flex flex-col'>
 					<h1 className='font-bold'>Mumbai 400020</h1>
