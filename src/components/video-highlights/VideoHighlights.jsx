@@ -1,4 +1,15 @@
-import React from 'react'
+const urls = [
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
+	'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+]
 
 function VideoHighlights() {
 	return (
@@ -11,48 +22,16 @@ function VideoHighlights() {
 			</div>
 
 			<div className='flex gap-2 md:gap-4 overflow-x-auto py-2'>
-				<video
-					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-					autoPlay
-					muted
-					controls
-					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
-				></video>
-				<video
-					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
-					autoPlay
-					muted
-					controls
-					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
-				></video>
-				<video
-					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
-					autoPlay
-					muted
-					controls
-					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
-				></video>
-				<video
-					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4'
-					autoPlay
-					muted
-					controls
-					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
-				></video>
-				<video
-					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'
-					autoPlay
-					muted
-					controls
-					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
-				></video>
-				<video
-					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
-					autoPlay
-					muted
-					controls
-					className='rounded-2xl w-[200px] h-72 object-cover md:w-[300px] md:h-96'
-				></video>
+				{urls.map((url, index) => (
+					<video
+						key={index}
+						src={url}
+						autoPlay
+						muted
+						controls
+						className='rounded-2xl w-[250px] h-[500px] object-cover md:w-[300px] md:h-96'
+					></video>
+				))}
 			</div>
 		</div>
 	)
