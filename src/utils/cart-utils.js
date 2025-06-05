@@ -8,9 +8,12 @@ export const getCart = () => {
 }
 
 export const addProductToCart = (product) => {
+    const isBrowser = typeof window !== 'undefined';
+
+    const cart = isBrowser ? JSON.parse(localStorage.getItem('cart')) : []
 
     // Check if the product already exists in the cart
-    const existingProduct = cart.find(item => item.id === product.id);
+    const existingProduct = cart?.find(item => item.id === product.id);
     if (existingProduct) {
         // If it exists, update the quantity
         existingProduct.quantity = existingProduct.quantity || 1 + 1;
