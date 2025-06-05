@@ -1,5 +1,6 @@
 import { SiCheckmarx } from 'react-icons/si'
 import { FaPlus } from 'react-icons/fa'
+import ProductCard from '@/components/products/ProductCard'
 
 const products = [
 	{
@@ -24,8 +25,8 @@ const products = [
 
 function Cart() {
 	return (
-		<div className='py-4 flex flex-col gap-4'>
-			<div className='flex flex-col gap-4  px-4 bg-white sticky top-[145px] z-50'>
+		<div className='pt-4 flex flex-col gap-4'>
+			<div className='flex flex-col gap-4  px-4 bg-white'>
 				<div className='flex flex-col'>
 					<h1 className='text-xl'>
 						Subtotal (3 items): ₹<span className='font-bold'>1080.00</span>
@@ -78,7 +79,7 @@ function Cart() {
 										type='checkbox'
 										className='size-6 bg-primary absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 outline p-1 rounded'
 									/>
-									<div className='bg-gray-500 absolute -top-2 -right-2 rounded-full flex'>
+									<div className='bg-gray-300 absolute -top-2 -right-2 rounded-full flex'>
 										<img
 											src='/svgs/favourite.svg'
 											className='size-4 m-2 object-contain'
@@ -88,7 +89,7 @@ function Cart() {
 								</div>
 								<div className='flex flex-col justify-between'>
 									<div>
-										<h1 className='text-xl line-clamp-2'>{product.title}</h1>
+										<h1 className='text-lg line-clamp-2'>{product.title}</h1>
 										<h1 className='font-bold text-xl'>{product.price}.00</h1>
 										<div className='flex items-center gap-2'>
 											<del>{product.discountPrice}.00</del>
@@ -102,7 +103,9 @@ function Cart() {
 											Top Seller
 										</h1>
 										<p className='text-green-500 font-bold'>in stock</p>
-										<p className='text-gray-500'>Eligible for free shipping</p>
+										<p className='text-gray-500 truncate'>
+											Eligible for free shipping
+										</p>
 									</div>
 								</div>
 							</div>
@@ -146,6 +149,68 @@ function Cart() {
 					</div>
 				</div>
 				<hr />
+				<div className='flex flex-col gap-2 mt-4'>
+					<h1 className='text-primary text-xl font-bold'>Your Favorite</h1>
+					<div className='grid grid-flow-col gap-2 overflow-x-auto pb-4'>
+						{products.map((product, i) => (
+							<ProductCard key={i} product={product} />
+						))}
+					</div>
+				</div>
+				<hr />
+				<div className='flex flex-col gap-2 mt-4'>
+					<h1 className='text-primary text-xl font-bold'>Matching Products</h1>
+					<div className='grid grid-flow-col gap-2 overflow-x-auto pb-4'>
+						{products.map((product, i) => (
+							<ProductCard key={i} product={product} />
+						))}
+					</div>
+				</div>
+				<hr />
+				<div className='flex flex-col gap-2 mt-4'>
+					<h1 className='text-primary text-xl font-bold'>
+						You Might Also Like
+					</h1>
+					<div className='grid grid-flow-col gap-2 overflow-x-auto pb-4'>
+						{products.map((product, i) => (
+							<ProductCard key={i} product={product} />
+						))}
+					</div>
+				</div>
+			</div>
+			<div className='bg-primary p-4 gap-2'>
+				<div className='flex flex-col items-center gap-1'>
+					<h1 className='text-lg font-bold text-white'>
+						Get top deals, latest trends and more
+					</h1>
+					<form className='flex items-center w-full justify-center gap-2'>
+						<input
+							type='email'
+							className='bg-white rounded-xl w-[70%] outline-none p-2'
+						/>
+						<button className='border border-white text-white p-2 rounded-xl'>
+							Subscribe
+						</button>
+					</form>
+				</div>
+				<div className='p-4 flex flex-col gap-1 items-center text-white justify-center'>
+					<p>
+						Shoping at your fingertips!
+						<span className='font-bold'>Download the app</span>
+					</p>
+					<div className='flex gap-4 justify-center'>
+						<img
+							src='/images/30.png'
+							className='w-[50%] object-contain'
+							alt=''
+						/>
+						<img
+							src='/images/31.png'
+							className='w-[50%] object-contain'
+							alt=''
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	)
