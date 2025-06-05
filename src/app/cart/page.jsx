@@ -74,7 +74,7 @@ function Cart() {
 							<h1>Select All Items</h1>
 						</div>
 						<div className='flex flex-col gap-6'>
-							{products.map(product => (
+							{cart.items.map(product => (
 								<CartItem key={product.id} product={product} />
 							))}
 						</div>

@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import { FaPlus } from 'react-icons/fa'
+import { FaMinus } from 'react-icons/fa'
 
 function CartItem({ product }) {
 	return (
@@ -44,14 +46,22 @@ function CartItem({ product }) {
 			</div>
 			<div className='flex flex-wrap gap-3 items-center'>
 				<div className='border w-[40%] border-primary px-3 py-2 rounded-2xl flex justify-between items-center'>
-					<img className='size-4' src='/svgs/delete.svg' alt='' />
+					<div>
+						{product.quantity >= 2 ? (
+							<FaMinus />
+						) : (
+							<img className='size-4' src='/svgs/delete.svg' alt='' />
+						)}
+					</div>
 					<h1 className='font-extrabold text-lg'>{product.quantity}</h1>
 					<FaPlus />
 				</div>
 				<h1 className='text-xl'>Delete</h1>
 				<div className='h-6 w-[1px] bg-gray-500'></div>
 				<h1 className='text-xl'>Save for Later</h1>{' '}
-				<h1 className='text-lg'>See more like this</h1>{' '}
+				<Link href='/products'>
+					<h1 className='text-lg'>See more like this</h1>{' '}
+				</Link>
 				<div className='h-6 w-[1px] bg-gray-500'></div>
 				<h1 className='text-lg'>Share</h1>{' '}
 			</div>
