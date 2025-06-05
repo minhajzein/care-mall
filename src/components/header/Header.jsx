@@ -37,7 +37,7 @@ function Header() {
 						>
 							<div className='relative'>
 								<PiShoppingCartSimple className='text-2xl' />
-								<div className='rounded-full font-bold bg-white px-[3px] py-[1px] flex absolute top-0 right-1/2 translate-x-1/2 '>
+								<div className='rounded-full font-bold bg-white px-[3px] py-[1px] flex absolute -top-[1px] right-1/2 translate-x-1/2 '>
 									<p className='m-auto text-primary text-[9px] pt-[1px]'>0</p>
 								</div>
 							</div>
