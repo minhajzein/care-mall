@@ -8,28 +8,31 @@ export const getCart = () => {
 }
 
 export const addProductToCart = (product) => {
-    const isBrowser = typeof window !== 'undefined';
+    if (typeof window === 'undefined') return [];
 
-    const cart = isBrowser ? JSON.parse(localStorage.getItem('cart')) : []
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Check if the product already exists in the cart
-    const existingProduct = cart?.find(item => item.id === product.id);
-    if (existingProduct) {
-        // If it exists, update the quantity
-        existingProduct.quantity = existingProduct.quantity || 1 + 1;
-        cart.map(item => {
-            if (item.id === existingProduct.id) {
-                return { ...item, quantity: existingProduct.quantity };
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        // Update quantity if product exists
+        const updatedCart = cart.map((item, index) => {
+            if (index === existingProductIndex) {
+                return { ...item, quantity: (item.quantity || 1) + 1 };
             }
             return item;
         });
-        isBrowser && localStorage.setItem('cart', JSON.stringify(cart));
-        return cart;
+
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        return updatedCart;
     }
-    let updatedCart = [...cart, { ...product, quantity: 1 }];
-    isBrowser && localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+    // If product doesn't exist, add it
+    const updatedCart = [...cart, { ...product, quantity: 1 }];
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
     return updatedCart;
-}
+};
+
 
 export const removeProductFromCart = (productId) => {
     let updatedCart = cart.filter(item => item.id !== productId);
