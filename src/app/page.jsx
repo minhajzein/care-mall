@@ -1,5 +1,4 @@
 import Banner from '@/components/banner/Banner'
-import SliderSecond from '@/components/banner/SliderSecond'
 import Categories from '@/components/categories/Categories'
 import DownloadOptions from '@/components/downloads/DownloadOptions'
 import InfinityCarousel from '@/components/infinity-carousel/InfinityCarousel'
@@ -13,10 +12,11 @@ import LifeStyleCorner from '@/components/products/LifeStyleCorner'
 import MobileAccesories from '@/components/products/MobileAccesories'
 import NewArrivals from '@/components/products/new-arrivals/NewArrivals'
 import PopularProducts from '@/components/products/popular-products/PopularProducts'
-import SocialMedia from '@/components/social-media/SocialMedia'
+import 'react-toastify/dist/ReactToastify.css'
 import Testimonials from '@/components/testimonials/Testimonials'
 import TopOffers from '@/components/top-offers/TopOffers'
 import VideoHighlights from '@/components/video-highlights/VideoHighlights'
+import { ToastContainer } from 'react-toastify'
 
 export default function Home() {
 	return (
@@ -42,6 +42,7 @@ export default function Home() {
 				<Testimonials />
 			</div>
 			<DownloadOptions />
+			<ToastContainer />
 		</div>
 	)
 }

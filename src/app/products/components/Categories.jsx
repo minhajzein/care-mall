@@ -13,10 +13,12 @@ function Categories() {
 			{categories.map((category, i) => (
 				<div
 					key={i}
-					className='flex flex-col gap-1 justify-start cursor-pointer'
+					className='flex flex-col gap-1 justify-start w-10 cursor-pointer'
 				>
 					<img src={category.icon} className='min-w-10 object-contain' alt='' />
-					<h1 className='text-[8px] text-center'>{category.title}</h1>
+					<h1 className='text-[8px] truncate w-full text-center'>
+						{category.title}
+					</h1>
 				</div>
 			))}
 		</div>

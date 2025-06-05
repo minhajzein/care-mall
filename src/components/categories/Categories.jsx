@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const categories = [
 	{ title: 'Electronics', icon: '/images/category-1.png' },
 	{ title: 'Mobile Accossories', icon: '/images/category-2.png' },
@@ -13,7 +15,7 @@ function Categories() {
 	return (
 		<div className='grid grid-cols-4 py-4 px-6 lg:grid-cols-8 font-nunito gap-3 lg:gap-8'>
 			{categories.map((category, i) => (
-				<div
+				<Link href='/products'
 					key={i}
 					className='flex flex-col gap-1 justify-center cursor-pointer'
 				>
@@ -21,7 +23,7 @@ function Categories() {
 					<h1 className='text-[12px] lg:text-sm whitespace-nowrap text-ellipsis overflow-hidden text-center'>
 						{category.title}
 					</h1>
-				</div>
+				</Link>
 			))}
 		</div>
 	)

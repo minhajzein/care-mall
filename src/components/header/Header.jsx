@@ -1,21 +1,35 @@
 'use client'
 import Modal from 'antd/es/modal/Modal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Login from '../auth/Login'
 import SignUp from '../auth/SignUp'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { CgMenuLeft } from 'react-icons/cg'
 import Link from 'next/link'
 import { PiShoppingCartSimple } from 'react-icons/pi'
+import { setCart } from '@/redux/slices/cartSlice'
 
 function Header() {
 	const user = useSelector(state => state.user.user)
+	const quantity = useSelector(state => state.cart.totalQuantity)
+	const dispatch = useDispatch()
 	const [isModalOpen, setIsModalOpen] = useState(false)
 	const [authType, setAuthType] = useState('login')
 
 	const handleModalOpen = () => setIsModalOpen(true)
 	const handleCancel = () => setIsModalOpen(false)
-
+	useEffect(() => {
+		const cart = JSON.parse(localStorage.getItem('cart')) || []
+		const totalQuantity = cart.reduce(
+			(acc, item) => acc + (item.quantity || 1),
+			0
+		)
+		const totalPrice = cart.reduce(
+			(acc, item) => acc + item.price * (item.quantity || 1),
+			0
+		)
+		dispatch(setCart({ items: cart, totalQuantity, totalPrice }))
+	}, [])
 	return (
 		<header className='w-full flex relative flex-col text-white'>
 			<div className='flex md:px-8 flex-col md:flex-row px-4 pb-2 pt-4 gap-2 md:gap-0 md:py-2 justify-between sticky bg-primary top-0 md:bg-white items-center'>
@@ -38,7 +52,9 @@ function Header() {
 							<div className='relative'>
 								<PiShoppingCartSimple className='text-2xl' />
 								<div className='rounded-full font-bold bg-white px-[3px] py-[1px] flex absolute -top-[1px] right-1/2 translate-x-1/2 '>
-									<p className='m-auto text-primary text-[9px] pt-[1px]'>0</p>
+									<p className='m-auto text-primary text-[9px] pt-[1px]'>
+										{quantity}
+									</p>
 								</div>
 							</div>
 						</Link>
