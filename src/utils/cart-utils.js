@@ -8,14 +8,18 @@ export const getCart = () => {
 }
 
 export const addProductToCart = (product) => {
-    const isBrowser = typeof window !== 'undefined';
-    const cart = isBrowser ? JSON.parse(localStorage.getItem('cart')) : []
 
     // Check if the product already exists in the cart
-    const existingProductIndex = cart.findIndex(item => item.id === product.id);
-    if (existingProductIndex !== -1) {
+    const existingProduct = cart.find(item => item.id === product.id);
+    if (existingProduct) {
         // If it exists, update the quantity
-        cart[existingProductIndex].quantity = (cart[existingProductIndex].quantity || 1) + 1;
+        existingProduct.quantity = existingProduct.quantity || 1 + 1;
+        cart.map(item => {
+            if (item.id === existingProduct.id) {
+                return { ...item, quantity: existingProduct.quantity };
+            }
+            return item;
+        });
         isBrowser && localStorage.setItem('cart', JSON.stringify(cart));
         return cart;
     }
