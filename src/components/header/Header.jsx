@@ -4,8 +4,9 @@ import { useState } from 'react'
 import Login from '../auth/Login'
 import SignUp from '../auth/SignUp'
 import { useSelector } from 'react-redux'
-import { BiMenuAltLeft } from 'react-icons/bi'
+import { CgMenuLeft } from 'react-icons/cg'
 import Link from 'next/link'
+import { PiShoppingCartSimple } from 'react-icons/pi'
 
 function Header() {
 	const user = useSelector(state => state.user.user)
@@ -34,7 +35,12 @@ function Header() {
 							href='/cart'
 							className='flex items-center gap-2 cursor-pointer'
 						>
-							<img src='/svgs/cart.svg' alt='' />
+							<div className='relative'>
+								<PiShoppingCartSimple className='text-2xl' />
+								<div className='rounded-full font-bold bg-white px-[3px] py-[1px] flex absolute top-0 right-1/2 translate-x-1/2 '>
+									<p className='m-auto text-primary text-[9px] pt-[1px]'>0</p>
+								</div>
+							</div>
 						</Link>
 					</div>
 				</div>
@@ -66,7 +72,7 @@ function Header() {
 						<p>Favorites</p>
 					</button>
 					<Link href='/cart' className='flex items-center gap-2 cursor-pointer'>
-						<img src='/svgs/cart.svg' alt='' />
+						<img src='/svgs/14.svg' alt='' />
 						<p>Cart</p>
 					</Link>
 				</div>
@@ -78,7 +84,7 @@ function Header() {
 				</button>
 			</div>
 			<div className='bg-primary w-full px-4  md:h-[48px] flex items-center justify-between pb-4 pt-1 md:px-8'>
-				<BiMenuAltLeft className='text-3xl' />
+				<CgMenuLeft className='text-2xl' />
 				<ul className='md:flex items-center hidden gap-6'>
 					<li className='cursor-pointer hover:underline flex items-center gap-1 duration-300'>
 						<h1>Electronics</h1>
