@@ -50,7 +50,7 @@ const products = [
 function ProductDetails() {
 	return (
 		<div className='flex flex-col gap-2'>
-			<div className='flex p-4 items-center bg-primary/30 text-lg gap-2'>
+			<div className='flex p-4 items-center bg-primary/30 text-sm gap-2'>
 				<FaLocationDot className='text-2xl' />
 				<div className='flex flex-col'>
 					<h1 className='font-bold'>Mumbai 400020</h1>
@@ -61,11 +61,11 @@ function ProductDetails() {
 				</div>
 			</div>
 			<div className='px-4'>
-				<h1 className='text-primary font-bold'>Home One</h1>
-				<p>Home one Foil Print Plastic Soap Dispenser</p>
+				<h1 className='text-primary text-lg font-bold'>Home One</h1>
+				<p className='text-xs'>Home one Foil Print Plastic Soap Dispenser</p>
 				<div className='flex justify-between items-center mt-1'>
 					<div className='flex items-center gap-2'>
-						<Rate allowHalf defaultValue={2.5} />
+						<Rate allowHalf value={3.5} disabled />
 						<p className='text-primary font-extrabold'>20</p>
 					</div>
 					<div className='flex items-center gap-1'>
@@ -85,34 +85,39 @@ function ProductDetails() {
 					arrows
 				>
 					<img
-						src='/images/product-2.png'
-						className='w-full h-[400px] rounded-2xl'
+						src='/images/product-details-1.jpg'
+						className='w-full object-contain bg-white h-[300px] rounded-2xl'
 						alt=''
 					/>
 					<img
-						src='/images/product-3.png'
-						className='w-full h-[400px] rounded-2xl'
+						src='/images/product-details-2.jpeg'
+						className='w-full object-contain bg-white h-[300px] rounded-2xl'
 						alt=''
 					/>
 					<img
-						src='/images/product-5.png'
-						className='w-full h-[400px] rounded-2xl'
+						src='/images/product-details-3.avif'
+						className='w-full object-contain bg-white h-[300px] rounded-2xl'
+						alt=''
+					/>
+					<img
+						src='/images/product-details-4.avif'
+						className='w-full object-contain bg-white h-[300px] rounded-2xl'
 						alt=''
 					/>
 				</Carousel>
-				<h1 className='mt-2 text-3xl'>Zaca Organic Hair Product 250ml</h1>
+				<h1 className='mt-2 text-2xl'>Zaca Organic Hair Product 250ml</h1>
 				<div className='flex items-center gap-2 mt-2'>
-					<h1 className='mt-2 text-4xl font-bold'>₹540.00</h1>
-					<div className='bg-gray-300 rounded-xl p-2 text-green-600 text-2xl font-bold'>
+					<h1 className='mt-2 text-3xl font-bold'>₹540.00</h1>
+					<div className='bg-gray-300 rounded-xl p-2 text-green-600 text-xl font-bold'>
 						45% OFF
 					</div>
 				</div>
-				<p className='text-gray-500 mt-2 text-2xl'>
-					<del className='font-bold text-3xl'>1200.00</del> (Incl.of all texes)
+				<p className='text-gray-500 mt-2 text-xl'>
+					<del className='font-bold text-2xl'>1200.00</del> (Incl.of all texes)
 				</p>
 				<hr className='mt-4' />
 				<div className='my-4 flex flex-col'>
-					<h1 className='text-3xl font-bold'>Offers(8)</h1>
+					<h1 className='text-2xl font-bold'>Offers(8)</h1>
 					<div className='flex items-center gap-4 mt-2'>
 						<img
 							src='/svgs/bank.svg'
@@ -121,11 +126,11 @@ function ProductDetails() {
 						/>
 						<div className='flex justify-between items-center w-full'>
 							<div className='flex flex-col'>
-								<h1 className='text-xl font-bold'>Bank Offers</h1>
-								<h2 className='w-full truncate text-gray-500'>
+								<h1 className='text-lg font-bold'>Bank Offers</h1>
+								<h2 className='w-full text-xs truncate text-gray-500'>
 									Get 5% cashback in care mall wallet on...
 								</h2>
-								<p className='text-gray-500'>7 Offers Available</p>
+								<p className='text-gray-500 text-xs'>7 Offers Available</p>
 							</div>
 							<img
 								src='/svgs/arrow-right-black.svg'
@@ -142,9 +147,11 @@ function ProductDetails() {
 						/>
 						<div className='flex justify-between items-center w-full'>
 							<div className='flex flex-col'>
-								<h1 className='text-xl font-bold'>Bank Offers</h1>
-								<h2 className='w-full truncate text-gray-500'>COUPONS</h2>
-								<p className='text-gray-500'>1 Offers Available</p>
+								<h1 className='text-lg font-bold'>Use Coupons</h1>
+								<h2 className='w-full truncate text-xs text-gray-500'>
+									COUPONS
+								</h2>
+								<p className='text-gray-500 text-xs'>1 Offers Available</p>
 							</div>
 							<img
 								src='/svgs/arrow-right-black.svg'
@@ -153,12 +160,12 @@ function ProductDetails() {
 							/>
 						</div>
 					</div>
-					<button className='border border-gray-500 w-[30%] p-2 ml-12 text-primary text-xl font-bold mt-4 rounded-full'>
+					<button className='border border-gray-500 w-[40%] py-2 px-4 ml-12 text-primary text-lg font-bold mt-4 rounded-full'>
 						view all
 					</button>
 				</div>
 				<hr />
-				<h1 className='mt-4 text-2xl font-bold'>Why Choose Caremall?</h1>
+				<h1 className='mt-4 text-xl font-bold'>Why Choose Caremall?</h1>
 				<div className='flex overflow-x-auto gap-4 mt-4'>
 					<img
 						src='/images/quality.jpg'
@@ -183,16 +190,18 @@ function ProductDetails() {
 				</div>
 				<hr className='mt-4' />
 				<div className='flex flex-col gap-2 py-4'>
-					<h1 className='text-2xl font-bold'>Deliver To</h1>
-					<p className='flex items-center gap-2 font-bold'>
+					<h1 className='text-xl font-bold'>Deliver To</h1>
+					<p className='flex items-center gap-2 text-sm font-bold'>
 						400020{''}
 						<span className='text-gray-500 capitalize'>mumbai</span>
 					</p>
 					<div className='flex items-center gap-1'>
-						<p className='text-green-600 font-bold capitalize'>in stock</p>
+						<p className='text-green-600 font-bold text-nowrap capitalize text-sm'>
+							in stock
+						</p>
 						<div className='h-8 w-[1px] bg-gray-600'></div>
 						<div className='relative h-8 w-[100px] flex'>
-							<h1 className='m-auto z-20 text-xl font-extrabold italic text-green-950'>
+							<h1 className='m-auto z-20 text-md font-extrabold italic text-green-950'>
 								Quick
 							</h1>
 							<img
@@ -201,14 +210,14 @@ function ProductDetails() {
 								alt=''
 							/>
 						</div>
-						<p className='text-lg truncate'>Delivery in 10 to 30 mins</p>
+						<p className='text-sm truncate'>Delivery in 10 to 30 mins</p>
 					</div>
 				</div>
 				<hr />
 				<div className='py-4 gap-2'>
-					<h1 className='text-2xl font-bold'>Sold By</h1>
+					<h1 className='text-xl font-bold'>Sold By</h1>
 					<div className='flex items-center gap-1'>
-						<h1 className='text-xl text-primary font-bold'>Reilance Retail</h1>
+						<h1 className='text-lg text-primary font-bold'>Reilance Retail</h1>
 						<img
 							src='/images/electro-general.jpg'
 							className='w-[35%] object-contain'
@@ -218,8 +227,8 @@ function ProductDetails() {
 				</div>
 				<hr />
 				<div className='py-4 gap-2'>
-					<h1 className='text-2xl font-bold'>Features & Details</h1>
-					<ul className='list-disc pl-8 text-gray-500'>
+					<h1 className='text-xl font-bold'>Features & Details</h1>
+					<ul className='list-disc pl-8 text-sm text-gray-500'>
 						<li>Pump Mechanism</li>
 						<li>Hygienic</li>
 						<li>Easy to Clean</li>
@@ -228,8 +237,8 @@ function ProductDetails() {
 				</div>
 				<hr />
 				<div className='py-4 gap-2 flex flex-col'>
-					<h1 className='text-2xl font-bold'>Description</h1>
-					<p>
+					<h1 className='text-xl font-bold'>Description</h1>
+					<p className='text-gray-500 text-sm'>
 						Home One Foil Plastic Soap Dispenser is A Device Designed to Store
 						And Dispense Liquid Soap or Hand Sanitizer in a Convenient And
 						Hygicnic Manner. it is a Common House Hold and Commerical Product
@@ -239,8 +248,8 @@ function ProductDetails() {
 						or Press. So What are you Waiting for? Buy this Product Online
 						Today!
 					</p>
-					<h1 className='text-2xl font-bold mt-2'>Description:</h1>
-					<p>
+					<h1 className='text-xl font-bold mt-2'>Description:</h1>
+					<p className='text-gray-500 text-sm'>
 						Despite our attempts to provide you with the most accurate
 						information possible, the actual packing and color of the product
 						may sometimes vary. pleas read the label, directions and warnings
@@ -249,69 +258,73 @@ function ProductDetails() {
 				</div>
 				<hr />
 				<div className='py-4'>
-					<h1 className='text-2xl font-bold'>Product information</h1>
-					<h1 className='font-bold text-xl text-gray-500'>
+					<h1 className='text-xl font-bold'>Product information</h1>
+					<h1 className='font-bold text-lg text-gray-500'>
 						GENERAL INFORMATION
 					</h1>
 					<div className='mt-6 flex flex-col gap-2 w-full'>
 						<div className='flex gap-1 w-full'>
-							<h1 className='w-[30%] capitalize font-bold'>brand</h1>
-							<h1 className='w-[65%] capitalize text-gray-500'>Home One</h1>
+							<h1 className='w-[30%] capitalize text-sm font-bold'>brand</h1>
+							<h1 className='w-[65%] capitalize text-sm text-gray-500'>
+								Home One
+							</h1>
 						</div>
 						<div className='flex gap-1 w-full'>
-							<h1 className='w-[30%] capitalize font-bold'>Manufacture</h1>
-							<h1 className='w-[65%] capitalize text-gray-500'>
+							<h1 className='w-[30%] capitalize text-sm font-bold'>
+								Manufacture
+							</h1>
+							<h1 className='w-[65%] capitalize text-sm text-gray-500'>
 								Polyset Plastic Pvt. Ltd.
 							</h1>
 						</div>
 						<div className='flex gap-1 w-full'>
-							<h1 className='w-[30%] capitalize font-bold'>
+							<h1 className='w-[30%] capitalize text-sm font-bold'>
 								Manufacturer Address
 							</h1>
-							<h1 className='w-[65%] capitalize text-gray-500'>
+							<h1 className='w-[65%] capitalize text-sm text-gray-500'>
 								Polyset Plastic Pvt. Ltd. 901-906, cello triumph, B-wing, 9th
 								Floor, I B Patel Road, Goregaon (East), Mumbai - 40063
 							</h1>
 						</div>
 						<div className='flex gap-1 w-full'>
-							<h1 className='w-[30%] capitalize font-bold'>
+							<h1 className='w-[30%] capitalize text-sm font-bold'>
 								Manufacturer Email
 							</h1>
-							<h1 className='w-[65%] capitalize text-gray-500'>
+							<h1 className='w-[65%] capitalize text-sm text-gray-500'>
 								PPL@Polyset.net
 							</h1>
 						</div>
 						<div className='flex gap-1 w-full'>
-							<h1 className='w-[30%] capitalize font-bold'>
+							<h1 className='w-[30%] capitalize text-sm font-bold'>
 								Manufacturer Website
 							</h1>
-							<h1 className='w-[65%] capitalize text-gray-500'>
+							<h1 className='w-[65%] capitalize text-sm text-gray-500'>
 								www.polyset.net
 							</h1>
 						</div>
 					</div>
-					<button className='capitalize py-2 px-4 text-xl font-bold text-primary border border-gray-500 rounded-full mt-4'>
+					<button className='capitalize py-2 px-4 text-lg font-bold text-primary border border-gray-500 rounded-full mt-4'>
 						More Details
 					</button>
 				</div>
 				<hr />
 				<div className='py-4 gap-2'>
-					<h1 className='text-2xl font-bold'>Return Policy</h1>
-					<p>
+					<h1 className='text-xl font-bold'>Return Policy</h1>
+					<p className='text-gray-500 text-sm'>
 						This product is returnable within 7 days. For more details, please
 						refer to the policy <span className='text-primary'>here</span>
 					</p>
 				</div>
 				<hr />
 				<div className='py-4 flex items-center justify-between'>
-					<h1 className='text-xl font-bold'>Article ID: 493827594</h1>
-					<img src='/svgs/copy.svg' className='size-6 object-contain' alt='' />
+					<h1 className='text-lg font-bold'>Article ID: 493827594</h1>
+					<img src='/svgs/copy.svg' className='size-4 object-contain' alt='' />
 				</div>
 			</div>
 			<div className='h-2 bg-gray-300 w-full'></div>
 			<div className='px-4 flex flex-col gap-4'>
 				<div className='flex flex-col gap-2'>
-					<h1 className='text-xl font-bold'>Frequently Bought Together</h1>
+					<h1 className='text-lg font-bold'>Frequently Bought Together</h1>
 					<div className='grid grid-flow-col gap-2 overflow-x-auto py-2'>
 						{products.map((product, i) => (
 							<ProductCard key={i} product={product} />
@@ -322,7 +335,7 @@ function ProductDetails() {
 			<div className='h-2 bg-gray-300 w-full mt-6'></div>
 			<div className='px-4 flex flex-col gap-4'>
 				<div className='flex flex-col gap-2'>
-					<h1 className='text-xl font-bold'>Similar Products</h1>
+					<h1 className='text-lg font-bold'>Similar Products</h1>
 					<div className='grid grid-flow-col gap-2 overflow-x-auto py-2'>
 						{products.map((product, i) => (
 							<ProductCard key={i} product={product} />
@@ -331,23 +344,25 @@ function ProductDetails() {
 				</div>
 				<hr />
 				<div className='flex flex-col mt-4 py-4 gap-6'>
-					<div className='flex justify-between'>
-						<h1 className='font-extrabold'>Questions & Answers</h1>
-						<button className='rounded-full px-4 py-1 flex items-center gap-1 border text-primary font-extrabold border-gray-500'>
+					<div className='flex justify-between items-center'>
+						<h1 className='font-extrabold text-nowrap text-sm'>
+							Questions & Answers
+						</h1>
+						<button className='rounded-full text-sm px-4 py-1 flex items-center gap-1 border text-primary font-extrabold border-gray-500'>
 							<HiQuestionMarkCircle />
-							<p>Ask a question</p>
+							<p className='text-nowrap'>Ask a question</p>
 						</button>
 					</div>
-					<div className='p-8 bg-gray-300 rounded-2xl flex items-center gap-2 font-bold text-primary'>
+					<div className='p-4 bg-gray-300 rounded-2xl flex items-center gap-2 font-bold text-primary'>
 						<PiWarningCircleFill />
-						<p>No question available for this product.</p>
+						<p className='text-sm'>No question available for this product.</p>
 					</div>
 				</div>
 				<hr />
 				<div className='py-4'>
 					<div className='grid grid-cols-2 gap-2'>
-						<div className='flex flex-col gap-2'>
-							<h1 className='font-bold text-lg'>Rating & Reviews</h1>
+						<div className='flex flex-col gap-2 justify-between'>
+							<h1 className='font-bold text-md'>Rating & Reviews</h1>
 							<h1 className='text-3xl font-bold'>3.5</h1>
 							<Rate allowHalf value={3.5} disabled />
 						</div>
@@ -385,16 +400,16 @@ function ProductDetails() {
 						</div>
 					</div>
 				</div>
-				<div className='flex flex-col py-4 gap-2'>
+				<div className='flex flex-col py-4 bg-primary/10 p-4 gap-1 rounded'>
 					<h1 className='font-bold text-lg'>Review this product</h1>
-					<p className='text-gray-500'>
+					<p className='text-gray-500 text-sm'>
 						Help others make an informed decision!
 					</p>
 					<Rate allowHalf />
 				</div>
 				<div className='py-4 gap-2'>
-					<h1 className='text-2xl font-bold text-primary'>Customers say</h1>
-					<p>
+					<h1 className='text-xl font-bold text-primary'>Customers say</h1>
+					<p className='text-gray-500 text-sm'>
 						Customers appreciate businesses that provide reliability,
 						efficiency, and exceptional service. A satisfied customer speaks
 						volumes through their trust, loyalty, and positive experiences.
@@ -405,9 +420,7 @@ function ProductDetails() {
 					</p>
 				</div>
 				<div className='py-4 gap-2'>
-					<h1 className='text-2xl font-bold text-primary'>
-						Review with images
-					</h1>
+					<h1 className='text-xl font-bold text-primary'>Review with images</h1>
 					<div className='grid grid-flow-col overflow-x-auto gap-2'>
 						<div className='size-[130px] bg-amber-600'></div>
 						<div className='size-[130px] bg-red-800'></div>
@@ -417,7 +430,7 @@ function ProductDetails() {
 					</div>
 				</div>
 				<div className='p-4'>
-					<button className='rounded-full px-6 w-full py-3 text-primary text-2xl font-bold border border-gray-500'>
+					<button className='rounded-full px-6 w-full py-2 text-primary text-xl font-bold border border-gray-500'>
 						Write a review
 					</button>
 				</div>
@@ -425,10 +438,10 @@ function ProductDetails() {
 			<div className='h-2 bg-gray-300 w-full mt-6'></div>
 			<div className='sticky bottom-0 shadow-2xl shadow-black bg-white z-30 p-4 flex justify-between'>
 				<div>
-					<h1>Explore More!</h1>
-					<h1 className='text-xl font-bold text-primary'>View Categories </h1>
+					<h1 className='text-sm'>Explore More!</h1>
+					<h1 className='text-lg font-bold text-primary'>View Categories </h1>
 				</div>
-				<button className='bg-primary text-white px-6 capitalize py-2 rounded-full text-lg font-bold'>
+				<button className='bg-primary text-white px-6 capitalize py-2 rounded-full text-md text-nowrap font-bold'>
 					add to cart
 				</button>
 			</div>
