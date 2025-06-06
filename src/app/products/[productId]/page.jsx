@@ -166,7 +166,7 @@ function ProductDetails() {
 				</div>
 				<hr />
 				<h1 className='mt-4 text-xl font-bold'>Why Choose Caremall?</h1>
-				<div className='flex overflow-x-auto gap-4 mt-4'>
+				<div className='w-full grid grid-cols-4 gap-4 mt-4'>
 					<img
 						src='/images/quality.jpg'
 						className='w-[175px] object-contain'
