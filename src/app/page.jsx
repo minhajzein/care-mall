@@ -28,7 +28,7 @@ export default function Home() {
 				<Categories />
 			</div>
 			<InfinityCarousel />
-			<div className='w-full md:p-8 gap-6 md:gap-8 flex flex-col'>
+			<div className='w-full md:p-8  md:gap-8 flex flex-col'>
 				<TopOffers />
 				<MiniBanners />
 				<FeaturedProducts />
@@ -44,6 +44,20 @@ export default function Home() {
 				<Testimonials />
 			</div>
 			<DownloadOptions />
+			<div className='flex bg-primary p-4 flex-col items-center gap-1'>
+				<h1 className='text-sm font-bold text-white'>
+					Get top deals, latest trends and more
+				</h1>
+				<form className='flex items-center w-full justify-center gap-2'>
+					<input
+						type='email'
+						className='bg-white rounded-xl w-[70%] outline-none p-2'
+					/>
+					<button className='border border-white text-white p-2 rounded-xl'>
+						Subscribe
+					</button>
+				</form>
+			</div>
 			<ToastContainer />
 		</div>
 	)

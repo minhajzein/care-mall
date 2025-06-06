@@ -14,7 +14,7 @@ import { FaShopify } from 'react-icons/fa'
 
 function VideoHighlights() {
 	return (
-		<div className='flex gap-2 md:gap-4 flex-col'>
+		<div className='flex mt-4 gap-2 md:gap-4 flex-col'>
 			<div className='flex gap-4 items-center'>
 				<div className='md:size-8 size-4 bg-primary'></div>
 				<h1 className='font-bold text-primary leading-3 text-sm md:text-3xl'>
@@ -22,7 +22,7 @@ function VideoHighlights() {
 				</h1>
 			</div>
 
-			<div className='flex gap-2 px-4 md:gap-4 overflow-x-auto py-2'>
+			<div className='flex gap-2 px-4 pb-4 md:gap-4 overflow-x-auto py-2'>
 				{urls.map((url, index) => (
 					<div className='relative min-w-[250px] h-[500px]'>
 						<video

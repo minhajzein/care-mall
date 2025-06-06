@@ -53,7 +53,7 @@ const products = [
 
 function FeaturedProducts() {
 	return (
-		<div className='flex flex-col gap-4'>
+		<div className='flex flex-col gap-4 mt-4'>
 			<div className='flex gap-4 items-center'>
 				<div className='md:size-8 size-4 bg-primary'></div>
 				<h1 className='font-bold text-primary leading-3 text-sm md:text-3xl'>
@@ -67,11 +67,19 @@ function FeaturedProducts() {
 					))}
 				</div>
 				<div className='flex flex-col gap-4'>
-					<img
-						src='/images/black-friday-sale.webp'
-						className='md:rounded-4xl'
-						alt=''
-					/>
+					<div className='relative w-full h-auto'>
+						<img
+							src='/images/black-friday-sale.webp'
+							className='md:rounded-4xl'
+							alt=''
+						/>
+						<img
+							className='absolute z-20 size-[25%] bottom-4 object-contain right-4'
+							src='/images/special-offer.gif'
+							alt=''
+						/>
+					</div>
+
 					<img
 						src='/images/featured-second.webp'
 						className='md:rounded-4xl hidden md:block'

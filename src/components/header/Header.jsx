@@ -53,7 +53,7 @@ function Header() {
 							<IoLocationOutline className='animate-bounce' />
 							<select name='location' id='location'>
 								<option value='india'>india</option>
-								<option value='india'>Soudi Arabia</option>
+								<option value='india'>Saudi Arabia</option>
 							</select>
 						</div>
 						<Link
@@ -88,7 +88,7 @@ function Header() {
 						<IoLocationOutline className='animate-bounce' />
 						<select name='location' id='location'>
 							<option value='india'>india</option>
-							<option value='india'>Soudi Arabia</option>
+							<option value='india'>Saudi Arabia</option>
 						</select>
 					</div>
 					<button className='flex items-center gap-2 cursor-pointer'>

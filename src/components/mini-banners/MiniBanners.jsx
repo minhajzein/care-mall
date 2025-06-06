@@ -3,7 +3,7 @@ import React from 'react'
 
 function MiniBanners() {
 	return (
-		<div className='w-full'>
+		<div className='w-full mt-4'>
 			<div className='md:grid grid-cols-2 gap-4 hidden w-full'>
 				<img
 					src='/images/mini-banner-1.png'
