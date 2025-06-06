@@ -42,7 +42,7 @@ const products = [
 
 function Fashion() {
 	return (
-		<div className='flex flex-col bg-amber-500/40 w-full font-nunito'>
+		<div className='flex flex-col bg-amber-500/10 w-full font-nunito'>
 			<CategoryHeader title={'Fashion'} />
 			<img className='p-4 w-full' src='/images/22.png' alt='' />
 			<div className='grid md:gap-4 md:grid-cols-6 grid-flow-col md:grid-flow-row overflow-x-auto gap-2 p-4'>

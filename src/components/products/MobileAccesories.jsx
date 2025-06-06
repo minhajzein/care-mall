@@ -42,7 +42,7 @@ const products = [
 
 function MobileAccesories() {
 	return (
-		<div className='flex flex-col border-y-[16px] border-white bg-orange-400/40 w-full font-nunito'>
+		<div className='flex flex-col border-y-[16px] border-white bg-orange-400/10 w-full font-nunito'>
 			<CategoryHeader title={'Mobile Accessories'} />
 			<div className='grid grid-flow-col md:grid-flow-row md:grid-cols-6 gap-2 md:gap-4 overflow-x-auto p-4'>
 				{products.map((product, i) => (

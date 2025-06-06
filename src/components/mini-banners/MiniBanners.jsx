@@ -25,15 +25,15 @@ function MiniBanners() {
 				>
 					<div className='w-full md:h-[316px] h-[100px] flex relative'>
 						<img
-							src='/images/mini-banner-1.png'
-							className='w-full h-full rounded-2xl object-cover overflow-hidden'
+							src='/images/sub-mini-banner-1.jpg'
+							className='w-full h-full object-cover overflow-hidden'
 							alt=''
 						/>
 					</div>
 					<div className='w-full md:h-[316px] h-[100px] flex relative'>
 						<img
-							src='/images/mini-banner-2.png'
-							className='w-full h-full rounded-2xl object-cover overflow-hidden'
+							src='/images/sub-mini-banner-2.jpg'
+							className='w-full h-full object-cover overflow-hidden'
 							alt=''
 						/>
 					</div>

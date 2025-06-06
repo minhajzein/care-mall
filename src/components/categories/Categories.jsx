@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 
 const categories = [
 	{ title: 'Electronics', icon: '/images/category-1.png' },
@@ -13,9 +13,10 @@ const categories = [
 
 function Categories() {
 	return (
-		<div className='grid grid-cols-4 py-4 px-6 lg:grid-cols-8 font-nunito gap-3 lg:gap-8'>
+		<div className='grid border-y-8 border-primary grid-cols-4 py-4 px-6 lg:grid-cols-8 font-nunito gap-4 lg:gap-8'>
 			{categories.map((category, i) => (
-				<Link href='/products'
+				<Link
+					href='/products'
 					key={i}
 					className='flex flex-col gap-1 justify-center cursor-pointer'
 				>

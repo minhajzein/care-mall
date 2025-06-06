@@ -1,12 +1,12 @@
 function ProductCardPopular({ product }) {
 	return (
-		<div className='h-[420px] w-[300px] md:w-full flex flex-col shadow-lg rounded-2xl overflow-hidden'>
+		<div className='h-[400px] w-[250px] md:w-full flex flex-col shadow-lg rounded-2xl overflow-hidden'>
 			<img
 				src={product.imageSource}
-				className='h-[300px] w-full hover:scale-105 duration-300 cursor-pointer object-bottom object-contain p-2 bg-[#D9D9D9]'
+				className='h-[250px] w-full hover:scale-105 duration-300 cursor-pointer object-bottom object-contain p-4 bg-[#D9D9D9]'
 				alt=''
 			/>
-			<div className='bg-white flex flex-col w-full items-center gap-1 justify-center h-[120px]'>
+			<div className='bg-white flex flex-col w-full items-center gap-1 justify-center h-[150px]'>
 				<h1 className='capitalize font-bold'>{product.title}</h1>
 				<p className='w-[80%] truncate text-center text-sm'>
 					{product.description}

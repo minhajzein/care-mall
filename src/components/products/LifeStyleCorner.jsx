@@ -42,7 +42,7 @@ const products = [
 
 function LifeStyleCorner() {
 	return (
-		<div className='flex flex-col bg-green-700/40 w-full font-nunito'>
+		<div className='flex flex-col w-full font-nunito'>
 			<CategoryHeader title={'Home&LifeStyle Corner'} />
 			<div className='grid md:grid-cols-6 lg:gap-4 md:grid-flow-row grid-flow-col overflow-x-auto gap-2 p-4'>
 				{products.map((product, i) => (

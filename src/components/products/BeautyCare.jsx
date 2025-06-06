@@ -42,7 +42,7 @@ const products = [
 
 function BeautyCare() {
 	return (
-		<div className='flex flex-col border-y-[16px] border-white bg-orange-700/40 w-full font-nunito'>
+		<div className='flex flex-col border-y-[16px] border-white bg-orange-700/10 w-full font-nunito'>
 			<CategoryHeader title={'Beauty Care'} />
 			<div className='grid grid-flow-col md:grid-flow-row overflow-x-auto md:gap-4 md:grid-cols-6 gap-2 p-4'>
 				{products.map((product, i) => (

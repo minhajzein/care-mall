@@ -17,16 +17,18 @@ import Testimonials from '@/components/testimonials/Testimonials'
 import TopOffers from '@/components/top-offers/TopOffers'
 import VideoHighlights from '@/components/video-highlights/VideoHighlights'
 import { ToastContainer } from 'react-toastify'
+import Timer from '@/components/timer/Timer'
 
 export default function Home() {
 	return (
 		<div className='flex flex-col justify-center min-h-dv bg-gray-100 text-gray-800'>
 			<Banner />
+			<Timer />
 			<div className='md:hidden'>
 				<Categories />
 			</div>
 			<InfinityCarousel />
-			<div className='w-full md:p-8 p-2 gap-6 md:gap-8 flex flex-col'>
+			<div className='w-full md:p-8 gap-6 md:gap-8 flex flex-col'>
 				<TopOffers />
 				<MiniBanners />
 				<FeaturedProducts />

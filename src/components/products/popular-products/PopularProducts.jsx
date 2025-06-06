@@ -42,7 +42,7 @@ function PopularProducts() {
 					Popular Products
 				</h1>
 			</div>
-			<div className='grid md:grid-cols-6 grid-flow-col md:grid-flow-row gap-2 overflow-x-auto md:gap-4'>
+			<div className='grid pb-2 md:grid-cols-6 px-4 grid-flow-col md:grid-flow-row gap-2 overflow-x-auto md:gap-4'>
 				{products.map((product, index) => (
 					<ProductCardPopular key={index} product={product} />
 				))}

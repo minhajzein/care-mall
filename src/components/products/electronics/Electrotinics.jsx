@@ -42,7 +42,7 @@ const products = [
 
 function Electrotinics() {
 	return (
-		<div className='flex flex-col bg-yellow-400/40 w-full font-nunito'>
+		<div className='flex flex-col w-full font-nunito'>
 			<CategoryHeader title={'Electronics'} />
 			<div className='grid md:grid-cols-6 md:gap-4 grid-flow-col md:grid-flow-row overflow-x-auto gap-2 p-4'>
 				{products.map((product, i) => (

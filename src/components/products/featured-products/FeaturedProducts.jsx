@@ -61,20 +61,20 @@ function FeaturedProducts() {
 				</h1>
 			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-				<div className='grid grid-flow-col md:grid-flow-row overflow-x-auto md:grid-cols-3 gap-2 md:gap-4'>
+				<div className='grid grid-flow-col px-4 pb-4 md:grid-flow-row overflow-x-auto md:grid-cols-3 gap-2 md:gap-4'>
 					{products.map(product => (
 						<ProductCard key={product.id} product={product} />
 					))}
 				</div>
 				<div className='flex flex-col gap-4'>
 					<img
-						src='/images/feetured-porduct.png'
-						className='rounded-4xl'
+						src='/images/black-friday-sale.webp'
+						className='md:rounded-4xl'
 						alt=''
 					/>
 					<img
-						src='/images/featured-banner.png'
-						className='rounded-4xl'
+						src='/images/featured-second.webp'
+						className='md:rounded-4xl hidden md:block'
 						alt=''
 					/>
 				</div>

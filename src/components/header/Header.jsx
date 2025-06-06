@@ -8,6 +8,7 @@ import { CgMenuLeft } from 'react-icons/cg'
 import Link from 'next/link'
 import { PiShoppingCartSimple } from 'react-icons/pi'
 import { setCart } from '@/redux/slices/cartSlice'
+import { IoLocationOutline } from 'react-icons/io5'
 
 function Header() {
 	const user = useSelector(state => state.user.user)
@@ -39,17 +40,20 @@ function Header() {
 
 	return (
 		<header className='w-full flex relative flex-col text-white'>
-			<div className='flex md:px-8 flex-col md:flex-row px-4 pb-2 pt-4 gap-2 md:gap-0 md:py-2 justify-between sticky bg-primary top-0 md:bg-white items-center'>
-				<img className='hidden md:block' src='/svgs/logo-web.svg' alt='' />
+			<div className='flex md:px-8 flex-col md:flex-row px-4 pb-2 pt-4 gap-1 md:gap-0 md:py-2 justify-between sticky bg-primary top-0 md:bg-white items-center'>
+				<Link href='/'>
+					<img className='hidden md:block' src='/svgs/logo-web.svg' alt='' />
+				</Link>
 				<div className='flex justify-between md:w-auto w-full items-center'>
 					<Link href='/'>
 						<img src='/svgs/CAREMALL.svg' alt='' />
 					</Link>
 					<div className='flex items-center gap-2 md:hidden'>
 						<div className='flex items-center gap-2'>
-							<img src='/svgs/location.svg' alt='' />
+							<IoLocationOutline className='animate-bounce' />
 							<select name='location' id='location'>
 								<option value='india'>india</option>
+								<option value='india'>Soudi Arabia</option>
 							</select>
 						</div>
 						<Link
@@ -58,7 +62,7 @@ function Header() {
 						>
 							<div className='relative'>
 								<PiShoppingCartSimple className='text-2xl' />
-								<div className='rounded-full font-bold bg-white px-[3px] py-[1px] flex absolute -top-[1px] right-1/2 translate-x-1/2 '>
+								<div className='rounded-full font-bold bg-white px-[3px] py-[1px] flex absolute top-[2px] right-[7px] '>
 									<p className='m-auto text-primary text-[9px] pt-[1px]'>
 										{quantity}
 									</p>
@@ -80,10 +84,11 @@ function Header() {
 					/>
 				</div>
 				<div className='px-4 md:flex items-center hidden gap-6 text-black'>
-					<div className='flex items-center gap-2'>
-						<img src='/svgs/location.svg' alt='' />
+					<div className='flex items-center'>
+						<IoLocationOutline className='animate-bounce' />
 						<select name='location' id='location'>
 							<option value='india'>india</option>
+							<option value='india'>Soudi Arabia</option>
 						</select>
 					</div>
 					<button className='flex items-center gap-2 cursor-pointer'>
@@ -95,8 +100,14 @@ function Header() {
 						<p>Favorites</p>
 					</button>
 					<Link href='/cart' className='flex items-center gap-2 cursor-pointer'>
-						<img src='/svgs/14.svg' alt='' />
-						<p>Cart</p>
+						<div className='relative'>
+							<PiShoppingCartSimple className='text-2xl' />
+							<div className='rounded-full font-bold bg-white px-[3px] py-[1px] flex absolute top-[2px] right-[7px] '>
+								<p className='m-auto text-primary text-[9px] pt-[1px]'>
+									{quantity}
+								</p>
+							</div>
+						</div>
 					</Link>
 				</div>
 				<button
@@ -106,7 +117,7 @@ function Header() {
 					Sign In
 				</button>
 			</div>
-			<div className='bg-primary w-full px-4  md:h-[48px] flex items-center justify-between pb-4 pt-1 md:px-8'>
+			<div className='bg-primary w-full px-4  md:h-[48px] flex items-center justify-between pb-4 md:px-8'>
 				<CgMenuLeft className='text-2xl' />
 				<ul className='md:flex items-center hidden gap-6'>
 					<li className='cursor-pointer hover:underline flex items-center gap-1 duration-300'>
