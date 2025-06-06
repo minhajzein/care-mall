@@ -52,7 +52,8 @@ function Header() {
 						<div className='flex items-center gap-2'>
 							<IoLocationOutline className='animate-bounce' />
 							<select name='location' id='location'>
-								<option value='india'>india</option>
+								<option value='india'>Choose your location</option>
+								<option value='india'>India</option>
 								<option value='india'>Saudi Arabia</option>
 							</select>
 						</div>
@@ -87,7 +88,8 @@ function Header() {
 					<div className='flex items-center'>
 						<IoLocationOutline className='animate-bounce' />
 						<select name='location' id='location'>
-							<option value='india'>india</option>
+							<option value='india'>Choose your location</option>
+							<option value='india'>India</option>
 							<option value='india'>Saudi Arabia</option>
 						</select>
 					</div>
