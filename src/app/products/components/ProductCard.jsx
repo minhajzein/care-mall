@@ -3,7 +3,8 @@ import { addProductToCart } from '@/utils/cart-utils'
 import { Rate } from 'antd'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function ProductCard({ product }) {
 	const dispatch = useDispatch()
@@ -44,6 +45,7 @@ function ProductCard({ product }) {
 			>
 				add to cart
 			</button>
+			<ToastContainer />
 		</div>
 	)
 }

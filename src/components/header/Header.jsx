@@ -39,19 +39,19 @@ function Header() {
 	}, [])
 
 	return (
-		<header className='w-full flex relative flex-col text-white'>
+		<header className='w-full flex z-40 relative flex-col text-white'>
 			<div className='flex md:px-8 flex-col md:flex-row px-4 pb-2 pt-4 gap-1 md:gap-0 md:py-2 justify-between sticky bg-primary top-0 md:bg-white items-center'>
 				<Link href='/'>
 					<img className='hidden md:block' src='/svgs/logo-web.svg' alt='' />
 				</Link>
-				<div className='flex justify-between md:w-auto w-full items-center'>
+				<div className='flex gap-3 justify-between md:w-auto w-full items-center'>
 					<Link href='/'>
 						<img src='/svgs/CAREMALL.svg' alt='' />
 					</Link>
 					<div className='flex items-center gap-2 md:hidden'>
-						<div className='flex items-center gap-2'>
+						<div className='flex items-center '>
 							<IoLocationOutline className='animate-bounce' />
-							<select name='location' id='location'>
+							<select name='location' className='text-xs' id='location'>
 								<option value='india'>Choose your location</option>
 								<option value='india'>India</option>
 								<option value='india'>Saudi Arabia</option>
@@ -120,7 +120,7 @@ function Header() {
 				</button>
 			</div>
 			<div className='bg-primary w-full px-4  md:h-[48px] flex items-center justify-between pb-4 md:px-8'>
-				<CgMenuLeft className='text-2xl' />
+				<CgMenuLeft className='text-xl' />
 				<ul className='md:flex items-center hidden gap-6'>
 					<li className='cursor-pointer hover:underline flex items-center gap-1 duration-300'>
 						<h1>Electronics</h1>
@@ -187,7 +187,7 @@ function Header() {
 						/>
 					</li>
 				</ul>
-				<button className='border border-white cursor-pointer px-3 py-1 rounded text-sm'>
+				<button className='border border-white h-full cursor-pointer px-3 py-1 rounded text-xs md:text-sm'>
 					Be the Face of the Brand
 				</button>
 			</div>

@@ -33,14 +33,14 @@ function Cart() {
 		<div className='pt-4 flex flex-col gap-4'>
 			{cart.items.length > 0 ? (
 				<>
-					<div className='flex flex-col gap-4  px-4 bg-white'>
+					<div className='flex z-50 sticky top-0 pt-2 flex-col gap-2  px-4 bg-white'>
 						<div className='flex flex-col'>
-							<h1 className='text-xl'>
+							<h1 className='text-lg'>
 								Subtotal ({cart.totalQuantity} items): ₹
 								<span className='font-bold'>{cart.totalPrice.toFixed(2)}</span>
 							</h1>
 							<div className='flex items-center gap-1'>
-								<h1>EMI available</h1>
+								<h1 className='text-sm'>EMI available</h1>
 								<img
 									className='size-3 object-contain'
 									src='/svgs/down-arrow-black.svg'
@@ -49,21 +49,23 @@ function Cart() {
 							</div>
 						</div>
 						<div className='flex w-full justify-between items-center gap-2'>
-							<div className='w-full bg-green-500 h-4 rounded-full'></div>
-							<h1 className='font-bold'>₹{cart.totalPrice.toFixed(2)}</h1>
+							<div className='w-full bg-green-500 h-2 rounded-full'></div>
+							<h1 className='font-bold text-sm'>
+								₹{cart.totalPrice.toFixed(2)}
+							</h1>
 						</div>
-						<div className='flex gap-2'>
-							<SiCheckmarx className='text-3xl text-green-500' />
-							<div className='flex flex-col'>
-								<h1 className='text-green-500 font-bold text-lg'>
+						<div className='flex gap-1'>
+							<SiCheckmarx className='text-4xl text-green-500' />
+							<div className='flex flex-col justify-between'>
+								<h1 className='text-green-500 font-bold text-sm'>
 									Your Order is Eligible for Free Delivery
 								</h1>
-								<h1 className='text-lg text-gray-500'>
+								<h1 className='text-sm text-gray-500'>
 									Choose free delivery option at checkout
 								</h1>
 							</div>
 						</div>
-						<button className='bg-primary p-3 w-full text-white text-lg font-bold rounded-full cursor-pointer'>
+						<button className='bg-primary p-2 w-full text-white text-md font-bold rounded-full cursor-pointer'>
 							Proceed To Buy
 						</button>
 						<hr />
@@ -111,7 +113,7 @@ function Cart() {
 			)}
 			<div className='flex flex-col gap-4 px-4'>
 				<div className='flex flex-col gap-2 mt-4'>
-					<h1 className='text-primary text-xl font-bold'>Your Favorite</h1>
+					<h1 className='text-primary text-lg font-bold'>Your Favorite</h1>
 					<div className='grid grid-flow-col gap-2 overflow-x-auto pb-4'>
 						{products.map((product, i) => (
 							<ProductCard key={i} product={product} />
@@ -120,7 +122,7 @@ function Cart() {
 				</div>
 				<hr />
 				<div className='flex flex-col gap-2 mt-4'>
-					<h1 className='text-primary text-xl font-bold'>Matching Products</h1>
+					<h1 className='text-primary text-lg font-bold'>Matching Products</h1>
 					<div className='grid grid-flow-col gap-2 overflow-x-auto pb-4'>
 						{products.map((product, i) => (
 							<ProductCard key={i} product={product} />
@@ -129,7 +131,7 @@ function Cart() {
 				</div>
 				<hr />
 				<div className='flex flex-col gap-2 mt-4'>
-					<h1 className='text-primary text-xl font-bold'>
+					<h1 className='text-primary text-lg font-bold'>
 						You Might Also Like
 					</h1>
 					<div className='grid grid-flow-col gap-2 overflow-x-auto pb-4'>
@@ -141,7 +143,7 @@ function Cart() {
 			</div>
 			<div className='bg-primary p-4 gap-2'>
 				<div className='flex flex-col items-center gap-1'>
-					<h1 className='text-lg font-bold text-white'>
+					<h1 className='text-sm font-bold text-white'>
 						Get top deals, latest trends and more
 					</h1>
 					<form className='flex items-center w-full justify-center gap-2'>
@@ -155,9 +157,9 @@ function Cart() {
 					</form>
 				</div>
 				<div className='p-4 flex flex-col gap-1 items-center text-white justify-center'>
-					<p>
+					<p className='text-xs'>
 						Shoping at your fingertips!
-						<span className='font-bold'>Download the app</span>
+						<span className='font-bold'> Download the app</span>
 					</p>
 					<div className='flex gap-4 justify-center'>
 						<img
