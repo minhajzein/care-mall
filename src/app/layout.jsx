@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useEffect, useState } from 'react'
 import Loading from '@/components/loading/Loading'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export default function RootLayout({ children }) {
 	const [isLoading, setIsLoading] = useState(true)
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
 						</>
 					)}
 				</ReduxProvider>
+				<SpeedInsights />
 			</body>
 		</html>
 	)
