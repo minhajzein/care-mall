@@ -40,10 +40,21 @@ export const removeProductFromCart = (productId) => {
     return updatedCart;
 }
 
-export const updateCartItemQuantity = (productId, quantity) => {
+export const incrementCartItemQuantity = (productId) => {
     let updatedCart = cart.map(item => {
         if (item.id === productId) {
-            return { ...item, quantity: quantity };
+            return { ...item, quantity: (item.quantity || 1) + 1 };
+        }
+        return item;
+    });
+    isBrowser && localStorage.setItem('cart', JSON.stringify(updatedCart));
+    return updatedCart;
+}
+
+export const decrementCartItemQuantity = (productId) => {
+    let updatedCart = cart.map(item => {
+        if (item.id === productId) {
+            return { ...item, quantity: Math.max((item.quantity || 1) - 1, 0) };
         }
         return item;
     }).filter(item => item.quantity > 0); // Remove items with zero quantity

@@ -1,5 +1,13 @@
-import { removeFromCart, updateCartQuantity } from '@/redux/slices/cartSlice'
-import { removeProductFromCart } from '@/utils/cart-utils'
+import {
+	decrementItemQuantity,
+	deleteCartItem,
+	incrementItemQuantity,
+} from '@/redux/slices/cartSlice'
+import {
+	decrementCartItemQuantity,
+	incrementCartItemQuantity,
+	removeProductFromCart,
+} from '@/utils/cart-utils'
 import Link from 'next/link'
 import { FaPlus } from 'react-icons/fa'
 import { FaMinus } from 'react-icons/fa'
@@ -11,14 +19,18 @@ import 'react-toastify/dist/ReactToastify.css'
 function CartItem({ product }) {
 	const dispatch = useDispatch()
 
-	const handleQuantityChanges = count => {
-		if (count === 1) {
-			dispatch(updateCartQuantity)
-		}
+	const handleIncrement = () => {
+		dispatch(incrementItemQuantity(product))
+		incrementCartItemQuantity(product.id)
+	}
+
+	const handleDecrement = () => {
+		dispatch(decrementItemQuantity(product))
+		decrementCartItemQuantity(product.id)
 	}
 
 	const handleRemove = () => {
-		dispatch(removeFromCart(product))
+		dispatch(deleteCartItem(product))
 		removeProductFromCart(product.id)
 		toast.warn(`${product.title} removed from cart`)
 	}
@@ -72,7 +84,7 @@ function CartItem({ product }) {
 				<div className='border w-[40%] border-primary px-3 py-1 rounded-2xl flex justify-between items-center'>
 					<div>
 						{product.quantity >= 2 ? (
-							<FaMinus />
+							<FaMinus onClick={handleDecrement} className='cursor-pointer' />
 						) : (
 							<img
 								onClick={handleRemove}
@@ -83,7 +95,7 @@ function CartItem({ product }) {
 						)}
 					</div>
 					<h1 className='font-extrabold text-lg'>{product.quantity}</h1>
-					<FaPlus />
+					<FaPlus onClick={handleIncrement} className='cursor-pointer' />
 				</div>
 				<h1 className='text-primary' onClick={handleRemove}>
 					Delete
