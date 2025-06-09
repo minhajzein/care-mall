@@ -1,11 +1,25 @@
+'use client'
+
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/header/Header'
 import './globals.css'
 import ReduxProvider from '@/lib/ReduxProvider'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useEffect, useState } from 'react'
+import Loading from '@/components/loading/Loading'
 
 export default function RootLayout({ children }) {
+	const [isLoading, setIsLoading] = useState(true)
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false)
+		}, 3000) // Simulate loading for 2 seconds
+
+		return () => clearTimeout(timer) // Cleanup the timer on unmount
+	}, [])
+
 	return (
 		<html lang='en'>
 			<head>
@@ -25,13 +39,18 @@ export default function RootLayout({ children }) {
 			</head>
 			<body>
 				<ReduxProvider>
-					<div className='w-full sticky top-0 z-50'>
-						<Header />
-					</div>
-
-					{children}
-					<ToastContainer />
-					<Footer />
+					{isLoading ? (
+						<Loading />
+					) : (
+						<>
+							<div className='w-full sticky top-0 z-50'>
+								<Header />
+							</div>
+							{children}
+							<ToastContainer />
+							<Footer />
+						</>
+					)}
 				</ReduxProvider>
 			</body>
 		</html>

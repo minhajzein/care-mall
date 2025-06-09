@@ -1,3 +1,5 @@
+'use client'
+
 import Banner from '@/components/banner/Banner'
 import Categories from '@/components/categories/Categories'
 import DownloadOptions from '@/components/downloads/DownloadOptions'
