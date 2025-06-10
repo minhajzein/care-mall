@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 function ProductCard({ product }) {
 	return (
-		<div className='md:w-full bg-white p-3 rounded w-36 shadow-black/50 shadow-md font-nunito gap-[2px] flex flex-col'>
+		<div className='md:w-full bg-white p-3 rounded w-40 shadow-black/50 shadow-md font-nunito gap-[2px] flex flex-col'>
 			<div className='w-full relative'>
 				<Link className='w-full' href={`/products/${product.title}`}>
 					<img
@@ -18,7 +18,7 @@ function ProductCard({ product }) {
 				</div>
 			</div>
 			<h1 className='text-sm truncate'>{product.title}</h1>
-			<Rate value={4.5} allowHalf disabled />
+			<Rate value={4.5} className='text-xs' allowHalf disabled />
 			<h1 className='font-bold text-lg'>₹{product.discountPrice}</h1>
 			<div className='flex gap-2 items-center'>
 				<del className='text-gray-500 text-xs'>₹{product.price}</del>
