@@ -18,7 +18,7 @@ function ProductCard({ product }) {
 				</div>
 			</div>
 			<h1 className='text-sm truncate'>{product.title}</h1>
-			<Rate value={4.5} className='text-xs' allowHalf disabled />
+			<Rate value={4.5} style={{ fontSize: '14px' }} allowHalf disabled />
 			<h1 className='font-bold text-lg'>₹{product.discountPrice}</h1>
 			<div className='flex gap-2 items-center'>
 				<del className='text-gray-500 text-xs'>₹{product.price}</del>
