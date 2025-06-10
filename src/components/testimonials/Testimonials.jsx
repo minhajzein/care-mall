@@ -53,7 +53,7 @@ function Testimonials() {
 					Testimonials
 				</h1>
 			</div>
-			<div className='grid grid-flow-col overflow-x-auto p-4 gap-4  md:grid-flow-row md:grid-cols-3'>
+			<div className='grid grid-flow-col scrollbar-hide overflow-x-auto p-4 gap-4  md:grid-flow-row md:grid-cols-3'>
 				{testimonials.map(testimonial => (
 					<TestimonialCard key={testimonial.id} testimonial={testimonial} />
 				))}

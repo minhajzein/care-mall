@@ -44,7 +44,7 @@ function BeautyCare() {
 	return (
 		<div className='flex flex-col bg-orange-700/10 w-full font-nunito'>
 			<CategoryHeader title={'Beauty Care'} />
-			<div className='grid grid-flow-col md:grid-flow-row overflow-x-auto md:gap-4 md:grid-cols-6 gap-2 p-4'>
+			<div className='grid grid-flow-col scrollbar-hide md:grid-flow-row overflow-x-auto md:gap-4 md:grid-cols-6 gap-2 p-4'>
 				{products.map((product, i) => (
 					<ProductCard key={i} product={product} />
 				))}

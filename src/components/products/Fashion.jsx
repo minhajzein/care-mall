@@ -45,7 +45,7 @@ function Fashion() {
 		<div className='flex mt-2 flex-col bg-amber-500/10 w-full font-nunito'>
 			<CategoryHeader title={'Fashion'} />
 			<img className='p-4 w-full' src='/images/22.png' alt='' />
-			<div className='grid md:gap-4 md:grid-cols-6 grid-flow-col md:grid-flow-row overflow-x-auto gap-2 p-4'>
+			<div className='grid md:gap-4 scrollbar-hide md:grid-cols-6 grid-flow-col md:grid-flow-row overflow-x-auto gap-2 p-4'>
 				{products.map((product, i) => (
 					<ProductCard key={i} product={product} />
 				))}

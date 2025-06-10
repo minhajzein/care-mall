@@ -9,7 +9,7 @@ function NewArrivals() {
 					New Arrivals
 				</h1>
 			</div>
-			<div className='md:grid px-4 pb-4 flex h-[200px] md:h-auto gap-2 md:gap-4 overflow-x-auto md:grid-cols-5'>
+			<div className='md:grid px-4 pb-4 flex h-[200px] md:h-auto gap-2 md:gap-4 overflow-x-auto scrollbar-hide md:grid-cols-5'>
 				<img
 					src='/images/new-arrivals.jpg'
 					className='rounded-2xl shadow-2xl object-contain  md:w-full'

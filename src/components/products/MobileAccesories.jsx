@@ -44,7 +44,7 @@ function MobileAccesories() {
 	return (
 		<div className='flex flex-col bg-orange-400/10 w-full font-nunito'>
 			<CategoryHeader title={'Mobile Accessories'} />
-			<div className='grid grid-flow-col md:grid-flow-row md:grid-cols-6 gap-2 md:gap-4 overflow-x-auto p-4'>
+			<div className='grid grid-flow-col scrollbar-hide md:grid-flow-row md:grid-cols-6 gap-2 md:gap-4 overflow-x-auto p-4'>
 				{products.map((product, i) => (
 					<ProductCard key={i} product={product} />
 				))}

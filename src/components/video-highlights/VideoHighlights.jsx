@@ -22,9 +22,12 @@ function VideoHighlights() {
 				</h1>
 			</div>
 
-			<div className='flex gap-2 px-4 pb-4 md:gap-4 overflow-x-auto py-2'>
+			<div className='flex gap-2  scrollbar-hide px-4 pb-4 md:gap-4 overflow-x-auto py-2'>
 				{urls.map((url, index) => (
-					<div key={index} className='relative min-w-[250px] h-[500px]'>
+					<div
+						key={index}
+						className='relative min-w-[250px] shadow-lg shadow-black/50 rounded-2xl h-[450px]'
+					>
 						<video
 							src={url}
 							autoPlay

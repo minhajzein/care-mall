@@ -43,7 +43,7 @@ function FlashSale() {
 					Flash Sale
 				</h1>
 			</div>
-			<div className='grid px-4 grid-flow-col md:grid-flow-row overflow-x-auto md:grid-cols-6 gap-2 pb-4 md:gap-4'>
+			<div className='grid px-4 grid-flow-col md:grid-flow-row scrollbar-hide overflow-x-auto md:grid-cols-6 gap-2 pb-4 md:gap-4'>
 				<img
 					src='/images/flash-sale.jpg'
 					className='md:col-span-2 rounded-lg hidden md:block'
