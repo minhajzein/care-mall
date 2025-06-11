@@ -7,7 +7,7 @@ function ProductCard({ product }) {
 			<div className='w-full relative'>
 				<Link className='w-full' href={`/products/${product.title}`}>
 					<img
-						className='border h-40 w-full object-contain border-black'
+						className='border border-primary/50 rounded h-40 w-full object-contain'
 						src={product.imageSource}
 						alt=''
 					/>
